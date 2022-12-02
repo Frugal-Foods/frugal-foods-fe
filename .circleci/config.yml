@@ -1,10 +1,11 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@4.7
+  node: circleci/node@5.0.3
+  cypress: cypress-io/cypress@2.2.0
 
 jobs:
-  build_and_test:
+  build:
     executor: node/default
     steps:
       - checkout
@@ -20,3 +21,10 @@ jobs:
           root: ~/project
           paths:
             - .
+workflows:
+  test_my_app:
+    jobs:
+      - cypress/run:
+          start: npm start
+      - build
+      
