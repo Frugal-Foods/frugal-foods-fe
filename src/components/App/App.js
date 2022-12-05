@@ -1,9 +1,14 @@
 import './App.css';
+import React from 'react'
+import ZipcodeSearch from '../ZipcodeSearch/ZipcodeSearch';
+import Header from '../Header/Header';
 
-function App() {
+const App = () => {
+
   return (
     <div className="App">
-      
+      <Header />
+      <ZipcodeSearch />
     </div>
   );
 }

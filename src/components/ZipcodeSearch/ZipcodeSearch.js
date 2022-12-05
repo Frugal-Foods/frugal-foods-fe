@@ -1,22 +1,39 @@
 import React, {useState} from 'react'
-// import { mockData } from
+import { useStores } from '../../hooks/useStores'
 
 const ZipcodeSearch = () => {
     const [searchValue, setSearchValue] = useState('')
-
-    handleNameChange = e => {
-        this.setState({ [e.target.name]: e.target.value });
-      }
+    const { data, loading, error } = useStores(searchValue)
+    // OR? const { data, loading, error } = useStores('64693')
+    console.log({data, loading, error})
+    // should this go in the submit function bc that's where we want this call to happen, once Find Stores button is clicked the call gets made stores should populate
+    // we need to capture the search value (we are doing this currently)
+        // that searchValue will inform what stores populate 
     
-      handleSubmit = e => {
-        e.preventDefault();
-        const newZipcode = {
-          title: this.state.title,
-          long_url: this.state.urlToShorten
-        }
-        this.props.addUrl(newUrl)
-        this.clearInputs();
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        // const newZipcode = {
+        //   searchValue
+        // }
+        // this.props.addUrl(newUrl)
+        // map over data (should be stores that match that zipcode) and those stores will display on the page
+        clearInputs();
       }
+      console.log(searchValue)
+
+    const clearInputs = () => {
+        setSearchValue('')
+    }
+
+    // from rick and morty tutorial I should be getting that data to console.log from line 6 but it remains undefined
+    // if I was getting data back, the Find Stores button could trigger a new view (using <Link /> wrapped around the button) and then display the store that has that zipcode
+    // right now we are successfully capturing the text box input, but we are getting a 404 Error 
+    // data should console.log: {
+        //   "id": "1",
+        //   "name": "Jast, Upton and Barrows",
+        //   "address": "Suite 456 823 Patricia Garden, East Corrina, CT 64693"
+        // }
+
     return (
         <div>
             <input 
@@ -26,7 +43,8 @@ const ZipcodeSearch = () => {
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
             />
-            <button>Search Stores</button>
+            <button onClick={(event) => handleSubmit(event)}>Find Stores</button>
+            <section className='store-container'></section>
         </div>
     )
 }
