@@ -4,9 +4,10 @@ import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import mockData from './mockData.json'
 
 const client = new ApolloClient({
-  uri: '',
+  uri: mockData,
   cache: new InMemoryCache()
 })
 
@@ -15,7 +16,6 @@ root.render(
     <ApolloProvider client={client}>
       <App />
     </ApolloProvider>
-
 );
 
 // If you want to start measuring performance in your app, pass a function
