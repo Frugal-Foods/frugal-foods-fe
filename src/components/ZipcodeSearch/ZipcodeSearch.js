@@ -3,15 +3,20 @@ import { useStores } from '../../hooks/useStores'
 
 const ZipcodeSearch = () => {
     const [searchValue, setSearchValue] = useState('')
-    const { data, loading, error } = useStores('64693')
+    const { data, loading, error } = useStores(searchValue)
+    // OR? const { data, loading, error } = useStores('64693')
     console.log({data, loading, error})
+    // should this go in the submit function bc that's where we want this call to happen, once Find Stores button is clicked the call gets made stores should populate
+    // we need to capture the search value (we are doing this currently)
+        // that searchValue will inform what stores populate 
     
     const handleSubmit = (event) => {
         event.preventDefault()
-        const newZipcode = {
-          searchValue
-        }
+        // const newZipcode = {
+        //   searchValue
+        // }
         // this.props.addUrl(newUrl)
+        // map over data (should be stores that match that zipcode) and those stores will display on the page
         clearInputs();
       }
       console.log(searchValue)
@@ -39,6 +44,7 @@ const ZipcodeSearch = () => {
                 onChange={(e) => setSearchValue(e.target.value)}
             />
             <button onClick={(event) => handleSubmit(event)}>Find Stores</button>
+            <section className='store-container'></section>
         </div>
     )
 }

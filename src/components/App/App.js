@@ -5,10 +5,6 @@ import Header from '../Header/Header';
 
 const App = () => {
 
-  const submitZipcode = (newZipcode) => {
-
-  }
-
   return (
     <div className="App">
       <Header />

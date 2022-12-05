@@ -8,7 +8,7 @@ const Header = () => {
         <header className='header-container'>
             <img 
                 className='header-image'
-                src={headerImage}
+                src={headerImage} alt={'header-image'}
             />
             <h1>Frugal Foods</h1>
             <button className='home'>Home</button>
