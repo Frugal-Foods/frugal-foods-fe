@@ -1,8 +1,10 @@
 import React, {useState} from 'react'
 import { useStores } from '../../hooks/useStores'
+import mockData from '../../mockData.json'
 
 const ZipcodeSearch = () => {
     const [searchValue, setSearchValue] = useState('')
+    const [stores, setStores] = useState([])
     const { data, loading, error } = useStores(searchValue)
     // OR? const { data, loading, error } = useStores('64693')
     console.log({data, loading, error})
@@ -12,16 +14,19 @@ const ZipcodeSearch = () => {
     
     const handleSubmit = (event) => {
         event.preventDefault()
+        setStores(data.stores)
         // const newZipcode = {
         //   searchValue
         // }
         // this.props.addUrl(newUrl)
-        // map over data (should be stores that match that zipcode) and those stores will display on the page
+        // the stores are displaying right now as soon as a matching zipcode is typed in, no need to click Find Stores
+        // if i remember correctly we also need to POST the user? so that any stores selected becomes associated with the user, so maybe have a mutation put on the Find Stores button and the POST can happen then/there?
         clearInputs();
       }
       console.log(searchValue)
 
-    const clearInputs = () => {
+    const clearInputs = (event) => {
+        event.preventDefault()
         setSearchValue('')
     }
 
@@ -36,6 +41,7 @@ const ZipcodeSearch = () => {
 
     return (
         <div>
+            <h3>Search Zipcode: </h3>
             <input 
                 type='text'
                 placeholder='Enter Zipcode'
@@ -44,7 +50,13 @@ const ZipcodeSearch = () => {
                 onChange={(e) => setSearchValue(e.target.value)}
             />
             <button onClick={(event) => handleSubmit(event)}>Find Stores</button>
-            <section className='store-container'></section>
+            <section className='store-container'>{data.stores.map(store => {
+                return <div>
+                    <h2>Store Name: {store.name}</h2>
+                    <h3>Store Address: {store.address}</h3>
+                    </div>
+            })}</section>
+            {/* // {data.stores.length && <button></button>} */}
         </div>
     )
 }
