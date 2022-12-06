@@ -1,5 +1,5 @@
 .header-image {
-    height:auto;
+    height: auto;
     width: 100vw;
 }
 
@@ -57,14 +57,25 @@
 
 .header-container .home:hover {
     background-color: black;
-  }
+}
 
-h1 {
+.logo-container {
     position: absolute;
-    top: 33%;
+    top: 50%;
     left: 50%;
-    font-size: xxx-large;
-    font-family: sans-serif;
+    background-color: white;
+    width: 42%;
+    height: 73%;
+    border: 2px solid black;
+    border-bottom-left-radius: 65% 50%;
+    border-bottom-right-radius: 65% 50%;
+    border-top-left-radius: 65% 75%;
+    border-top-right-radius: 65% 75%;
     transform: translate(-50%, -50%);
-    text-shadow: 0px 0px 3px rgb(18 20 26 / 88%);
+}
+
+.frugal-logo {
+    position: relative;
+    width: 80%;
+    top: 7%;
 }
