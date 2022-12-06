@@ -50,7 +50,7 @@ const ZipcodeSearch = () => {
             />
             <button onClick={(event) => handleSubmit(event)}>Find Stores</button>
             <section className='store-container'>{data.stores.map(store => {
-                return <div>
+                return <div key={store.id}>
                     <h2>Store Name: {store.name}</h2>
                     <h3>Store Address: {store.address}</h3>
                     </div>

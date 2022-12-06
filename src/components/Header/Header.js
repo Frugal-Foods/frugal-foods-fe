@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import headerImage from '../../assetts/headerImage.jpeg'
 import './Header.css'
 
 const Header = () => {
-
+// const [home, setHome] = useState(true)
     return (
         <header className='header-container'>
             <img 

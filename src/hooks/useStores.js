@@ -11,7 +11,7 @@
 // `
 
 export const useStores = (zipcode) => {
-    const { data, error, loading} = {
+    const { data, error, loading } = {
         "data": {
           "stores": [
             {
