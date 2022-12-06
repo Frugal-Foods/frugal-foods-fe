@@ -16,7 +16,8 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <ZipcodeSearch />
+      <ZipcodeSearch queryStores={queryStores} />
+      <StoresContainer stores= {stores} />
     </div>
   );
 }
