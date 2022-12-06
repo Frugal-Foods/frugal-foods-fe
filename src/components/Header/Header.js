@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import headerImage from '../../assetts/headerImage.jpeg'
 import { BsCart4 } from 'react-icons/bs';
+import frugalLogo from '../../assetts/frugal_logo.png'
 import './Header.css'
 
 const Header = () => {
@@ -11,10 +12,12 @@ const Header = () => {
         <header className='header-container'>
             <img
                 className='header-image'
-                src={headerImage} alt={''}
+                src={headerImage} alt='grocery produce'
             />
-            <h1>Frugal Foods</h1>
             <Link to='/' className='home'>Home</Link>
+            <div className='logo-container'> 
+                <img className='frugal-logo' src={frugalLogo} alt='frugal foods logo'/>
+            </div>
             <button className='list'>Grocery List</button>
             <Link to='/search' className='search'>Search</Link>
             <Link to='/cart'>
