@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
 import { useStores } from '../../hooks/useStores'
-import mockData from '../../mockData.json'
 
 const ZipcodeSearch = () => {
     const [searchValue, setSearchValue] = useState('')
-    const [stores, setStores] = useState([])
+    // const [stores, setStores] = useState([])
     const { data, loading, error } = useStores(searchValue)
     // OR? const { data, loading, error } = useStores('64693')
     console.log({data, loading, error})
@@ -14,7 +13,7 @@ const ZipcodeSearch = () => {
     
     const handleSubmit = (event) => {
         event.preventDefault()
-        setStores(data.stores)
+        // setStores(data.stores)
         // const newZipcode = {
         //   searchValue
         // }

@@ -1,17 +1,14 @@
-import { useQuery, gql } from '@apollo/client'
-import mockData from '../mockData.json'
+// import { useQuery, gql } from '@apollo/client'
 
-
-
-const GET_STORES = gql`
-    query GetStores($zipcode: String!) {
-        stores(zipcode: $zipcode) {
-            id
-            name
-            address
-        }
-    }
-`
+// const GET_STORES = gql`
+//     query GetStores($zipcode: String!) {
+//         stores(zipcode: $zipcode) {
+//             id
+//             name
+//             address
+//         }
+//     }
+// `
 
 export const useStores = (zipcode) => {
     const { data, error, loading} = {
