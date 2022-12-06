@@ -4,10 +4,9 @@ import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
-import mockData from './mockData.json'
 
 const client = new ApolloClient({
-  uri: mockData,
+  uri: 'https://frugal-foods-be.fly.dev/graphql',
   cache: new InMemoryCache()
 })
 
