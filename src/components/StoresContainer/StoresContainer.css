@@ -1,0 +1,10 @@
+.stores-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.store-cards {
+    display: flex;
+    justify-content: center;
+}

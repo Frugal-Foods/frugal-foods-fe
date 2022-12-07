@@ -10,8 +10,10 @@
 //     }
 // `
 
-export const useStores = (zipcode) => {
-    const { data, error, loading } = {
+
+export const getStores = (zipcode) => {
+    const { data, error, loading} = {
+
         "data": {
           "stores": [
             {
