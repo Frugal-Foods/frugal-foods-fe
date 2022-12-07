@@ -7,12 +7,10 @@ import StoresContainer from '../StoresContainer/StoresContainer';
 import { getStoreItems } from '../../hooks/useStoreItems'
 import SearchContainer from '../SearchContainer/SearchContainer';
 import SearchForm from '../SearchForm/SearchForm';
-// import { getStoreNames }
 
 const App = () => {
   const [stores, setStores] = useState([])
   const [storeItems, setStoreItems] = useState([])
-  const [storeNames, setStoreNames] = useState([])
 
   const queryStores = (searchValue) => {
     const {data} = getStores(searchValue)
