@@ -40,7 +40,7 @@ const queryStoreItems = (searchValue) => {
         } />
         <Route path='/search' element={
           <>
-            <SearchContainer />
+            <SearchContainer storeItems= {storeItems}/>
             <SearchForm queryStoreItems={queryStoreItems}/>
           </>
         } />
