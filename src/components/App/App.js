@@ -7,16 +7,26 @@ import { Route, Routes } from 'react-router-dom';
 import { Footer } from '../Footer/Footer';
 import { CartItem } from '../CartItem/CartItem';
 import StoresContainer from '../StoresContainer/StoresContainer';
-import { SearchForm } from '../SearchForm/SearchForm';
-import { SearchContainer } from '../SearchContainer/SearchContainer';
+import { getStoreItems } from '../../hooks/useStoreItems'
+import SearchContainer from '../SearchContainer/SearchContainer';
+import SearchForm from '../SearchForm/SearchForm';
 
 const App = () => {
   const [stores, setStores] = useState([])
+  const [storeItems, setStoreItems] = useState([])
 
   const queryStores = (searchValue) => {
     const { data } = getStores(searchValue)
     setStores(data.stores)
   }
+
+const queryStoreItems = (searchValue) => {
+  const {data} = getStoreItems(searchValue)
+  console.log(data.items)
+  setStoreItems(data.items)
+  // setStoreNames(getStoreNames)
+
+}
 
   return (
     <div className="App">
@@ -31,7 +41,7 @@ const App = () => {
         <Route path='/search' element={
           <>
             <SearchContainer />
-            <SearchForm />
+            <SearchForm queryStoreItems={queryStoreItems}/>
           </>
         } />
         <Route path='/cart' element={<CartItem />}></Route>
