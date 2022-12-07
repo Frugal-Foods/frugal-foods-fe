@@ -14,93 +14,48 @@
 //     }
 // `
 
-export const useStoreItems = (search) => {
-    const { data, error, loading } = {
-        "data": {
-          "stores": [
-            {
-              "id": "1",
-              "name": "Jast, Upton and Barrows",
+export const getStoreItems = (search) => {
+    let { data, error, loading } = {
+            "data": {
               "items": [
                 {
                   "id": "1",
-                  "name": "Sleek Linen Hat"
-                },
-                {
-                  "id": "2",
-                  "name": "Durable Aluminum Coat"
-                },
-                {
-                  "id": "3",
-                  "name": "Lightweight Plastic Wallet"
-                },
-                {
-                  "id": "4",
-                  "name": "Intelligent Paper Lamp"
+                  "name": "bananas",
+                  "photoUrl": "http://quigley.info/heath_bashirian",
+                  "stores": [
+                    {
+                      "name": "Fisher-Block",
+                      "id": "1",
+                      "storeProducts": [
+                        {
+                          "id": "1",
+                          "storeId": 1,
+                          "price": 29.95
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Ebert Group",
+                      "id": "2",
+                      "storeProducts": [
+                        {
+                          "id": "5",
+                          "storeId": 2,
+                          "price": 7.04
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
-            },
-            {
-              "id": "2",
-              "name": "Sauer-Stoltenberg",
-              "items": [
-                {
-                  "id": "1",
-                  "name": "Sleek Linen Hat"
-                },
-                {
-                  "id": "2",
-                  "name": "Durable Aluminum Coat"
-                },
-                {
-                  "id": "3",
-                  "name": "Lightweight Plastic Wallet"
-                },
-                {
-                  "id": "4",
-                  "name": "Intelligent Paper Lamp"
-                }
-              ]
-            },
-            {
-              "id": "3",
-              "name": "Thompson, Harber and Braun",
-              "items": [
-                {
-                  "id": "4",
-                  "name": "Intelligent Paper Lamp"
-                },
-                {
-                  "id": "5",
-                  "name": "Durable Steel Chair"
-                },
-                {
-                  "id": "6",
-                  "name": "Durable Plastic Gloves"
-                },
-                {
-                  "id": "7",
-                  "name": "Practical Copper Lamp"
-                }
-              ]
-            },
-            {
-              "id": "4",
-              "name": "Carroll Group",
-              "items": []
-            },
-            {
-              "id": "5",
-              "name": "Ryan-Anderson",
-              "items": []
-            }
-          ]
-        },
+          },
         "error": '',
         "loading": ''
       }
-      const storeItems = data.stores.items(item => item.name.includes(search))
-      data.stores.items = storeItems
+      const itemValues = Object.values(data.items)
+      console.log('values', itemValues)
+      data.items = itemValues
+// console.log(itemValues)
 
     //   const { data, error, loading } = useQuery(GET_STORE_ITEMS, {
     //     variables: {

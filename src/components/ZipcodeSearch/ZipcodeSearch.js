@@ -2,21 +2,23 @@ import React, { useState } from 'react'
 
 const ZipcodeSearch = ({queryStores}) => {
     const [searchValue, setSearchValue] = useState('')
-    const [error, setError] = useState('')
+    const [domError, setDomError] = useState('')
 
     const handleSubmit = (event) => {
         event.preventDefault()
         if(searchValue) {
             queryStores(searchValue)
-            clearInputs();
+            console.log(searchValue)
+            clearInputs(event);
         } else {
-            setError('Enter a 5 digit zipcode')
+            setDomError('Enter a 5 digit zipcode')
         }
       }
 
-    const clearInputs = () => {
+    const clearInputs = (event) => {
+        event.preventDefault()
         setSearchValue('')
-        setError('')
+        setDomError('')
     }
 
     return (
@@ -30,17 +32,7 @@ const ZipcodeSearch = ({queryStores}) => {
                 onChange={(e) => setSearchValue(e.target.value)}
             />
             <button onClick={(event) => handleSubmit(event)}>Find Stores</button>
-<<<<<<< HEAD
-            <section className='store-container'>{data.stores.map(store => {
-                return <div key={store.id}>
-                    <h2>Store Name: {store.name}</h2>
-                    <h3>Store Address: {store.address}</h3>
-                    </div>
-            })}</section>
-            {/* // {data.stores.length && <button></button>} */}
-=======
-            {error && <h4 className="error-message">{error}</h4>}
->>>>>>> a4eec72f5e495dff41a6e4fa6a65d1748765a2d4
+            {domError && <h4 className="error-message">{domError}</h4>}
         </div>
     )
 }
