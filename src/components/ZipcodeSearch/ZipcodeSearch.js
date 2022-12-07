@@ -8,7 +8,6 @@ const ZipcodeSearch = ({queryStores}) => {
         event.preventDefault()
         if(searchValue) {
             queryStores(searchValue)
-            console.log(searchValue)
             clearInputs(event);
         } else {
             setDomError('Enter a 5 digit zipcode')

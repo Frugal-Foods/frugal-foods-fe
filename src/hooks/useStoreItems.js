@@ -52,10 +52,7 @@ export const getStoreItems = (search) => {
         "error": '',
         "loading": ''
       }
-      const itemValues = Object.values(data.items)
-      console.log('values', itemValues)
-      data.items = itemValues
-// console.log(itemValues)
+      // const itemValues = Object.values(data.items)
 
     //   const { data, error, loading } = useQuery(GET_STORE_ITEMS, {
     //     variables: {
