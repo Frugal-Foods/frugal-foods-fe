@@ -36,3 +36,4 @@ const SearchForm = ({ queryStoreItems }) => {
 }
 
 export default SearchForm
+

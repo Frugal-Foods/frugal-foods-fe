@@ -4,6 +4,7 @@ import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
+import { BrowserRouter } from 'react-router-dom';
 
 const client = new ApolloClient({
   uri: 'https://frugal-foods-be.fly.dev/graphql',
@@ -13,7 +14,9 @@ const client = new ApolloClient({
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <ApolloProvider client={client}>
+      <BrowserRouter>
       <App />
+      </BrowserRouter>
     </ApolloProvider>
 );
 
