@@ -21,7 +21,7 @@ export const getStoreItems = (search) => {
                 {
                   "id": "1",
                   "name": "bananas",
-                  "photoUrl": "http://quigley.info/heath_bashirian",
+                  "photoUrl": "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
                   "stores": [
                     {
                       "name": "Fisher-Block",

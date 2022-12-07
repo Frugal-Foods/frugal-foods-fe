@@ -6,8 +6,8 @@ import "./SearchPage.css";
 const SearchPage = ({ storeItems, queryStoreItems }) => {
   return (
     <section className="search-page">
-      <SearchContainer storeItems={storeItems} />
       <SearchForm queryStoreItems={queryStoreItems} />
+      <SearchContainer storeItems={storeItems} />
     </section>
   );
 };

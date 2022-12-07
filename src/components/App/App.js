@@ -32,6 +32,10 @@ const App = () => {
   //   setCartItems(data.items);
   // };
 
+  const removeItem = (id) => {
+    //Mutation from graphql
+  }
+
   return (
     <div className="App">
       <Header />
@@ -51,7 +55,7 @@ const App = () => {
         />
         <Route
           path="/cart"
-          element={<CartPage cartItems={cartItems} />}
+          element={<CartPage cartItems={cartItems} removeItem={removeItem}/>}
         ></Route>
       </Routes>
       <Footer />

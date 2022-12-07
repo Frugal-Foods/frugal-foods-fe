@@ -1,7 +1,7 @@
 import React from "react";
 import StoresContainer from "../StoresContainer/StoresContainer";
 import ZipcodeSearch from "../ZipcodeSearch/ZipcodeSearch";
-import "./StoresPage/StoresPage.css";
+import "./StoresPage.css";
 
 const StoresPage = ({ queryStores, stores }) => {
   return (
