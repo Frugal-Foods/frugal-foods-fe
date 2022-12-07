@@ -10,8 +10,10 @@
 //     }
 // `
 
+
 export const getStores = (zipcode) => {
     const { data, error, loading} = {
+
         "data": {
           "stores": [
             {
@@ -56,6 +58,7 @@ export const getStores = (zipcode) => {
     //         zipcode
     //     }
     // })
+    // console.log({ data, error, loading})
     return {
         data,
         error,

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './StoreCard.css';
 
-const StoreCard = ({name, address}) => {
+const StoreCard = ({id, name, address}) => {
     const [checked, setChecked] = useState(false)
 
     const handleChecked = () => {
@@ -9,7 +9,7 @@ const StoreCard = ({name, address}) => {
     };
 
     return (
-        <section className="individual-store-card">
+        <section className="individual-store-card" key={id}>
             <input type="checkbox" checked={checked} onChange={handleChecked}/>
             <p>{name}</p>
             <p>{address}</p>

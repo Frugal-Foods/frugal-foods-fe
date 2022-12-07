@@ -4,7 +4,7 @@ import frugalLogo from '../../assetts/frugal_logo.png'
 import './Header.css'
 
 const Header = () => {
-
+// const [home, setHome] = useState(true)
     return (
         <header className='header-container'>
             <img 
