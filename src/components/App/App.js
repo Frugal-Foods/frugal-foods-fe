@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import { getStores } from '../../hooks/useStores';
 import ZipcodeSearch from '../ZipcodeSearch/ZipcodeSearch';
-import { SearchItem } from '../SearchItem/SearchItem';
 import Header from '../Header/Header';
 import { Route, Routes } from 'react-router-dom';
 import { Footer } from '../Footer/Footer';
