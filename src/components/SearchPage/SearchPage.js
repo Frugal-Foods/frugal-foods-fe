@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchContainer from "../SearchContainer/SearchContainer";
 import SearchForm from "../SearchForm/SearchForm";
-import "./SearchPage/SearchPage.css";
+import "./SearchPage.css";
 
 const SearchPage = ({ storeItems, queryStoreItems }) => {
   return (
