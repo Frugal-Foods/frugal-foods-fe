@@ -1,7 +1,16 @@
-import React from 'react'
+import React from 'react';
+import './CartItem.css';
 
-export const CartItem = () => {
+const CartItem = ({id, itemName, storeName, quantity, price, removeItem}) => {
   return (
-    <div>Add items to view cart</div>
+    <section className='individual-cart-item'>
+      <p>{itemName}</p>
+      <p>{storeName}</p>
+      <p>{quantity}</p>
+      <p>{price}</p>
+      <button onClick={() => removeItem(id)}>🗑</button>
+    </section>
   )
 }
+
+export default CartItem;

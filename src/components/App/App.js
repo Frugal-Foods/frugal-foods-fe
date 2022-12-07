@@ -1,54 +1,66 @@
-import React, { useState } from 'react';
-import './App.css';
-import { getStores } from '../../hooks/useStores';
-import ZipcodeSearch from '../ZipcodeSearch/ZipcodeSearch';
-import Header from '../Header/Header';
-import { Route, Routes } from 'react-router-dom';
-import { Footer } from '../Footer/Footer';
-import { CartItem } from '../CartItem/CartItem';
-import StoresContainer from '../StoresContainer/StoresContainer';
-import { getStoreItems } from '../../hooks/useStoreItems'
-import SearchContainer from '../SearchContainer/SearchContainer';
-import SearchForm from '../SearchForm/SearchForm';
+import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import { getStores } from "../../hooks/useStores";
+import { getStoreItems } from "../../hooks/useStoreItems";
+import Header from "../Header/Header";
+import { Footer } from "../Footer/Footer";
+import SearchPage from "../SearchPage/SearchPage";
+import StoresPage from "../StoresPage/StoresPage";
+import CartPage from "../CartPage/CartPage";
 
 const App = () => {
-  const [stores, setStores] = useState([])
-  const [storeItems, setStoreItems] = useState([])
+  const [stores, setStores] = useState([]);
+  const [storeItems, setStoreItems] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   const queryStores = (searchValue) => {
-    const { data } = getStores(searchValue)
-    setStores(data.stores)
+    const { data } = getStores(searchValue);
+    setStores(data.stores);
+  };
+
+  const queryStoreItems = (searchValue) => {
+    const { data } = getStoreItems(searchValue);
+    setStoreItems(data.items);
+    //This will need to be moved to different query when mock data is added- Placeholder for now.
+    setCartItems(data.items);
+  };
+
+  //Comment in when mock data is created
+  // const queryCartItems = (userID) => {
+  //   const { data } = getCartItems(userID);
+  //   setCartItems(data.items);
+  // };
+
+  const removeItem = (id) => {
+    //Mutation from graphql
   }
-
-const queryStoreItems = (searchValue) => {
-  const {data} = getStoreItems(searchValue)
-  console.log(data.items)
-  setStoreItems(data.items)
-  // setStoreNames(getStoreNames)
-
-}
 
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path='/' element={
-          <>
-            <ZipcodeSearch queryStores={queryStores} />
-            <StoresContainer stores={stores} />
-          </>
-        } />
-        <Route path='/search' element={
-          <>
-            <SearchContainer storeItems= {storeItems}/>
-            <SearchForm queryStoreItems={queryStoreItems}/>
-          </>
-        } />
-        <Route path='/cart' element={<CartItem />}></Route>
+        <Route
+          path="/"
+          element={<StoresPage queryStores={queryStores} stores={stores} />}
+        />
+        <Route
+          path="/search"
+          element={
+            <SearchPage
+              queryStoreItems={queryStoreItems}
+              storeItems={storeItems}
+            />
+          }
+        />
+        <Route
+          path="/cart"
+          element={<CartPage cartItems={cartItems} removeItem={removeItem}/>}
+        ></Route>
       </Routes>
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
