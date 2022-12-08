@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./SearchItem.css";
 import { MdAddShoppingCart } from "react-icons/md"
 import { useMutation } from "@apollo/client";
 import { CREATE_USER_STORE_ITEM } from "../../hooks/mutations";
 
-const SearchItem = ({ itemName, photoUrl, price, storeName, itemId }) => {
-    // const [quantity, setQuantity] = useState(0)
+const SearchItem = ({ itemName, photoUrl, price, storeName }) => {
+
 
     const [postUserItem, {userId, storeItemId, quantity}] = useMutation(CREATE_USER_STORE_ITEM)
-    console.log(postUserItem)
 
     const handlePost = (userId, storeItemId, quantity) => {
         postUserItem({
