@@ -1,8 +1,6 @@
 .store-item-container {
   display: flex;
   justify-content: center;
-  /* flex-direction: row;
-  flex-wrap: wrap;  */
 }
 
 .store-item-card {
