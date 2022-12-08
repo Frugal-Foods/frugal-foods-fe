@@ -1,10 +1,13 @@
 .individual-store-card {
     display: flex;
-    flex-direction: row;
-    width: 80%;
+    width: 500px;
     border: 2px solid black;
     border-radius: 4px;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
+
 
 p {
     margin-right: 4px;
