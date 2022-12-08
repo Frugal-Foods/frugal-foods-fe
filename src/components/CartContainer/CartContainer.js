@@ -3,6 +3,7 @@ import "./CartContainer.css";
 import CartItem from "../CartItem/CartItem";
 
 const CartContainer = ({ cartItems, removeItem }) => {
+
   const itemCards = cartItems.map((item) => {
     return (
       <CartItem

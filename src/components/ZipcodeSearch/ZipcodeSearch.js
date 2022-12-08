@@ -6,16 +6,15 @@ const ZipcodeSearch = ({queryStores}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        if(searchValue) {
+        if(searchValue.length >= 5) {
             queryStores(searchValue)
-            clearInputs(event);
+            clearInputs();
         } else {
             setDomError('Enter a 5 digit zipcode')
         }
       }
 
-    const clearInputs = (event) => {
-        event.preventDefault()
+    const clearInputs = () => {
         setSearchValue('')
         setDomError('')
     }
