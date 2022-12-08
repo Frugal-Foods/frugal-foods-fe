@@ -1,16 +1,19 @@
 import React from "react";
 import SearchItem from "../SearchItem/SearchItem";
 
-const SearchContainer = ({ storeItems }) => {
-  const storeItemCards = storeItems.map((item) => {
+const SearchContainer = ({ items }) => {
+  if (!items) {
+    return null;
+  }
+  const storeItemCards = items.map((item) => {
     return (
       <SearchItem
-        id={item.id}
-        key={item.id}
-        name={item.name}
+        id={item.storeItemId}
+        key={item.storeItemId}
+        itemName={item.itemName}
         photoUrl={item.photoUrl}
-        price={item.stores[0].storeProducts[0].price}
-        storeName={item.stores[0].name}
+        storeName={item.storeName}
+        price={item.price}
       />
     );
   });

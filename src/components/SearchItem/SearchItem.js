@@ -1,11 +1,11 @@
 import React from "react";
 import "./SearchItem.css";
 
-const SearchItem = ({ name, photoUrl, price, storeName }) => {
+const SearchItem = ({ itemName, photoUrl, price, storeName }) => {
   return (
     <section className="store-item-card">
       <img src={photoUrl} alt="grocery item" />
-      <p>{name}</p>
+      <p>{itemName}</p>
       <p>Store: {storeName}</p>
       <p>${price}</p>
     </section>
