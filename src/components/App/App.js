@@ -9,29 +9,8 @@ import StoresPage from "../StoresPage/StoresPage";
 import CartPage from "../CartPage/CartPage";
 
 const App = () => {
-  
-  // const queryStores = (searchValue) => {
-  //   const { data } = getStores(searchValue);
-  //   setStores(data.stores);
-  // };
-
-  // const queryStoreItems = (searchValue) => {
-  //   const { data } = getStoreItems(searchValue);
-  //   setStoreItems(data.items);
-  //   //This will need to be moved to different query when mock data is added- Placeholder for now.
-  //   setCartItems(data.items);
-  // };
-
-  //Comment in when mock data is created
-  // const queryCartItems = (userID) => {
-  //   const { data } = getCartItems(userID);
-  //   setCartItems(data.items);
-  // };
-
- 
-
   return (
-   <UserContext.Provider>
+   <UserContext.Provider value={1}>
     <div className="App">
       <Header />
       <Routes>
