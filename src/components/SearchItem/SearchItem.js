@@ -12,7 +12,7 @@ const SearchItem = ({ itemName, photoUrl, price, storeName }) => {
         <h3>{itemName}</h3>
         <h3>Store: {storeName}</h3>
         <p>in stock</p>
-      </div>
+    </div>
     </section>
   );
 };
