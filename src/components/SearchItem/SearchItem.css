@@ -5,7 +5,6 @@
   justify-content: center;
 }
 
-
 .store-item-container {
   display: flex;
   justify-content: center;
@@ -57,3 +56,4 @@
 .add-icon:hover {
   color: rgb(53, 209, 48);
 }
+
