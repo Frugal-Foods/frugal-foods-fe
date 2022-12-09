@@ -1,6 +1,15 @@
+.item-results-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .store-item-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
 }
 
 .store-item-card {
@@ -47,3 +56,4 @@
 .add-icon:hover {
   color: rgb(53, 209, 48);
 }
+

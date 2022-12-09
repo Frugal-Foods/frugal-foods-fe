@@ -20,7 +20,7 @@ const ZipcodeSearch = ({ queryStores }) => {
   };
 
   return (
-    <div>
+    <div className="find-store-container">
       <h3>Find Grocery Stores Near You: </h3>
       <input
         type="text"

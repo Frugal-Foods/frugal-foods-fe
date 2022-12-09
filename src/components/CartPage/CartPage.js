@@ -1,10 +1,12 @@
 import React from "react";
 import CartContainer from "../CartContainer/CartContainer";
 import "./CartPage.css";
-import { useCartItems } from "../../hooks/getQueries";
+import { useCartItems } from "../../hooks/useStores";
+// import { UserContext } from '../../context/userContext'
 
 const CartPage = () => {
-  const { data, loading, error } = useCartItems(1);
+  // const userId = useContext(UserContext)
+  const { data, loading, error } = useCartItems(5);
 
   const removeItem = (id) => {
     //Mutation from graphql
