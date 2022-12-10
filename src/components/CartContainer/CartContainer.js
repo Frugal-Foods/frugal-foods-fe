@@ -2,7 +2,7 @@ import React from "react";
 import "./CartContainer.css";
 import CartItem from "../CartItem/CartItem";
 
-const CartContainer = ({ cartItems, removeItem }) => {
+const CartContainer = ({ storeTotalPrice, storeName, storeAddress, cartItems, deleteItem }) => {
 
   const itemCards = cartItems.map((item) => {
     return (
@@ -10,15 +10,22 @@ const CartContainer = ({ cartItems, removeItem }) => {
         id={item.id}
         key={item.id}
         itemName={item.itemName}
-        storeName={item.storeName}
         quantity={item.quantity}
-        price={item.price}
-        removeItem={removeItem}
+        photoUrl={item.itemPhotoUrl}
+        itemTotal={item.itemTotal}
+        deleteItem={deleteItem}
       />
     );
   });
 
-  return <section className="cart-container">{itemCards}</section>;
+  return (
+  <section className="cart-container">
+    <h2>{storeName}</h2>
+    <p>{storeAddress}</p>
+    <h3>Total: ${storeTotalPrice}</h3>
+    <div>{itemCards}</div>
+    </section>
+  )
 };
 
 export default CartContainer;

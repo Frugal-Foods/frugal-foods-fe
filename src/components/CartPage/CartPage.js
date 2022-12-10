@@ -1,27 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import CartContainer from "../CartContainer/CartContainer";
-import "./CartPage.css";
 import { useCartItems } from "../../hooks/useStores";
-// import { UserContext } from '../../context/userContext'
+import { UserContext } from "../../context/userContext";
+import "./CartPage.css";
 
 const CartPage = () => {
-  // const userId = useContext(UserContext)
-  const { data, loading, error } = useCartItems(5);
+  const userId = useContext(UserContext);
+  const { data, loading, error } = useCartItems(userId);
 
-  const removeItem = (id) => {
+  const deleteItem = (id) => {
     //Mutation from graphql
   };
 
+  const cartsByStore = data?.userStoreItems.map((store) => {
+    return (
+      <CartContainer
+        id={store.storeId}
+        key={store.storeId}
+        cartItems={store.listItems}
+        storeTotalPrice={store.storeTotalPrice}
+        storeName={store.name}
+        storeAddress={store.address}
+        deleteItem={deleteItem}
+      />
+    );
+  });
+
   return (
     <section className="cart-page">
-      <h2>Grocery List</h2>
       {loading && <p>Loading...</p>}
-      {!loading && !error && (
-        <CartContainer
-          cartItems={data?.userStoreItems}
-          removeItem={removeItem}
-        />
-      )}
+      {cartsByStore}
+      {!loading && !error && cartsByStore}
       {error && <p>Error: {error}</p>}
     </section>
   );
