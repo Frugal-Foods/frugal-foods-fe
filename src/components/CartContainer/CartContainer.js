@@ -2,7 +2,7 @@ import React from "react";
 import "./CartContainer.css";
 import CartItem from "../CartItem/CartItem";
 
-const CartContainer = ({ storeTotalPrice, storeName, storeAddress, cartItems, deleteItem }) => {
+const CartContainer = ({ storeTotalPrice, storeName, storeAddress, cartItems }) => {
 
   const itemCards = cartItems.map((item) => {
     return (
@@ -13,7 +13,6 @@ const CartContainer = ({ storeTotalPrice, storeName, storeAddress, cartItems, de
         quantity={item.quantity}
         photoUrl={item.itemPhotoUrl}
         itemTotal={item.itemTotal}
-        deleteItem={deleteItem}
       />
     );
   });

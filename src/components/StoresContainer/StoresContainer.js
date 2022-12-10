@@ -10,11 +10,7 @@ const StoresContainer = ({ stores }) => {
   }
   const storeCards = stores.map((store) => {
     return (
-<<<<<<< HEAD
-      <StoreCard id={store.id} name={store.name} address={store.address} key={store.id} />
-=======
       <StoreCard name={store.name} address={store.address} id={store.id} key={store.id} />
->>>>>>> main
     );
   });
 

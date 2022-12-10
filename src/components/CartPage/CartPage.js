@@ -17,7 +17,6 @@ const CartPage = () => {
         storeTotalPrice={store.storeTotalPrice}
         storeName={store.name}
         storeAddress={store.address}
-        deleteItem={deleteItem}
       />
     );
   });
