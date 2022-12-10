@@ -1,8 +1,6 @@
 import React from "react";
 import StoreCard from "../StoreCard/StoreCard";
 import './StoresContainer.css'
-import { CREATE_USER_STORE } from "../../hooks/postMutations";
-import { useMutation } from "@apollo/client";
 import { Link } from 'react-router-dom'
 
 const StoresContainer = ({ stores }) => {
