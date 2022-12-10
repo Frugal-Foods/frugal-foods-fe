@@ -1,7 +1,7 @@
 import React from "react";
 import CartContainer from "../CartContainer/CartContainer";
 import "./CartPage.css";
-import { useCartItems } from "../../hooks/useStores";
+import { useCartItems } from "../../hooks/getQueries";
 // import { UserContext } from '../../context/userContext'
 
 const CartPage = () => {

@@ -7,6 +7,7 @@ import { GET_STORES } from "../../hooks/getQueries";
 
 const StoresPage = () => {
   const [getStores, {loading, error, data}] = useLazyQuery(GET_STORES)
+  console.log(data)
 
   const queryStores = (searchValue) => {
     getStores({variables: {zipcode: searchValue}})
