@@ -8,10 +8,6 @@ const CartPage = () => {
   const userId = useContext(UserContext);
   const { data, loading, error } = useCartItems(userId);
 
-  const deleteItem = (id) => {
-    //Mutation from graphql
-  };
-
   const cartsByStore = data?.userStoreItems.map((store) => {
     return (
       <CartContainer
