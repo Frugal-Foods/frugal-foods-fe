@@ -10,7 +10,7 @@ import CartPage from "../CartPage/CartPage";
 
 const App = () => {
   return (
-   <UserContext.Provider value={1}>
+   <UserContext.Provider value={5}>
     <div className="App">
       <Header />
       <Routes>

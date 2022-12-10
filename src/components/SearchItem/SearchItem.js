@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_CART_MUTATION } from "../../hooks/postMutations";
-// import { UserContext } from "../../context/userContext";
+import { UserContext } from "../../context/userContext";
 import "./SearchItem.css";
 import { MdAddShoppingCart } from "react-icons/md";
 import { FaChevronCircleLeft } from "react-icons/fa";
 import { FaChevronCircleRight } from "react-icons/fa";
 
 const SearchItem = ({ id, itemName, photoUrl, price, storeName }) => {
-  // const user = useContext(UserContext);
+  const user = useContext(UserContext);
   const [quantity, setQuantity] = useState(1);
   const [addCart] = useMutation(ADD_CART_MUTATION, {
     variables: {
-      userId: 5,
+      userId: user,
       storeItemId: id,
       quantity,
     },

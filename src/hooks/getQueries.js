@@ -8,7 +8,7 @@ export const GET_STORES = gql`
       address
     }
   }
-`
+`;
 
 export const GET_ITEMS = gql`
   query storeItems($search: String!) {
@@ -22,9 +22,9 @@ export const GET_ITEMS = gql`
       storeId
     }
   }
-`
+`;
 export const GET_CART = gql`
-  query GetCart($userId: ID!) {
+  query userStoreItems($userId: ID!) {
     userStoreItems(userId: $userId) {
       storeId
       name
@@ -48,5 +48,6 @@ export const useCartItems = (userId) => {
       userId,
     },
   });
-  return { data, error, loading };
+  return { data, loading, error };
 };
+

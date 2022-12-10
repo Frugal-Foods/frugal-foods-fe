@@ -16,6 +16,16 @@ export const ADD_CART_MUTATION = gql`
   }
 `;
 
+export const DELETE_ITEM_MUTATION = gql`
+  mutation destroyUserStoreItem(id: ID!) {
+    destroyUserStoreItem(
+      input: {id: $id}
+    ) {
+      id
+    }
+  }
+`;
+
 export const CREATE_USER_STORE = gql`
     mutation createUserStore($userId: ID!, $storeId: ID!) {
       createUserStore(

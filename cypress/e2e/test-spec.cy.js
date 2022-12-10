@@ -3,7 +3,7 @@ describe('Frugal Foods E2E', () => {
     cy.visit('http://localhost:3000')
   });
 
-  it('should show user the home page', () => {
+  it.skip('should show user the home page', () => {
     cy.contains('h3', 'Find Grocery Stores Near You')
   })
 
