@@ -15,3 +15,14 @@ export const ADD_CART_MUTATION = gql`
     }
   }
 `;
+
+export const DELETE_ITEM_MUTATION = gql`
+  mutation destroyUserStoreItem(id: ID!) {
+    destroyUserStoreItem(
+      input: {id: $id}
+    ) {
+      id
+    }
+  }
+`;
+
