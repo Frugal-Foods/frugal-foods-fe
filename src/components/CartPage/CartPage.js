@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import CartContainer from "../CartContainer/CartContainer";
-import { useCartItems } from "../../hooks/useStores";
+import { useCartItems } from "../../hooks/useQueries";
 import { UserContext } from "../../context/userContext";
 import "./CartPage.css";
 
