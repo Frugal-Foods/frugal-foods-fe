@@ -11,8 +11,9 @@ export const GET_STORES = gql`
 `;
 
 export const GET_ITEMS = gql`
-  query storeItems($search: String!) {
-    items(search: $search) {
+  query storeItems($search: String!, $userId: Int!) {
+    items(search: $search, userId: $userId) {
+      userId
       itemName
       itemId
       photoUrl
@@ -51,3 +52,22 @@ export const useCartItems = (userId) => {
   return { data, loading, error };
 };
 
+export const GET_USER_STORES = gql`
+  query userStores($userId: Int!) {
+    userStores(userId: $userId) {
+      id
+      storeId
+      userId
+    }
+  }
+`
+
+export const useUserStores = (userId) => {
+  const { data, loading, error } = useQuery(GET_USER_STORES, {
+    variables: {
+      userId
+    }
+  })
+  console.log('user store', data)
+  return { data, error, loading }
+}

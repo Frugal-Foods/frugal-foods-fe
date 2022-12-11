@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./StoreCard.css";
 import { CREATE_USER_STORE } from "../../hooks/postMutations";
+import { DELETE_STORE_MUTATION } from "../../hooks/postMutations";
 import { useMutation } from "@apollo/client";
 
 const StoreCard = ({ id, name, address }) => {
@@ -9,19 +10,28 @@ const StoreCard = ({ id, name, address }) => {
   const [addStore] = useMutation(CREATE_USER_STORE, {
     variables: {
       userId: 5,
-      storeId: parseInt(id)
+      storeId: id
+    }
+  })
+  const [deleteStore] = useMutation(DELETE_STORE_MUTATION, {
+    variables: {
+      id: id
     }
   })
 
-  const handleChecked = () => {
+  const handleChecked = (id) => {
     setChecked(!checked);
-    addStore()
+    if(!checked) {
+      addStore(id);
+    } else if(checked) {
+      deleteStore(id)
+    }
   };
 
   return (
     <div>
       <section className="individual-store-card" key={id}>
-        <input type="checkbox" checked={checked} onChange={handleChecked} />
+        <input type="checkbox" checked={checked} onChange={() => handleChecked(id)} />
         <p>{name}</p>
         <p>{address}</p>
       </section>

@@ -2,9 +2,11 @@ import React from "react";
 import StoreCard from "../StoreCard/StoreCard";
 import './StoresContainer.css'
 import { Link } from 'react-router-dom'
+import { useUserStores } from "../../hooks/getQueries";
 
 const StoresContainer = ({ stores }) => {
   console.log(stores)
+
   if(!stores) {
     return null
   }
