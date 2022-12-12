@@ -24,7 +24,6 @@ const CartPage = () => {
   return (
     <section className="cart-page">
       {loading && <p>Loading...</p>}
-      {cartsByStore}
       {!loading && !error && cartsByStore}
       {error && <p>Error: {error}</p>}
     </section>

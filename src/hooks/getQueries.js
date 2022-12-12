@@ -1,6 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 
-export const GET_STORES = gql`
+export const GET_ALL_STORES = gql`
   query GetStores($zipcode: String!) {
     stores(zipcode: $zipcode) {
       id
@@ -10,9 +10,20 @@ export const GET_STORES = gql`
   }
 `;
 
+export const GET_USER_STORES = gql`
+  query GetUserStores($userId: Int!) {
+    userStores(userId: $userId) {
+      id
+      storeId
+      userId
+    }
+  }
+`
+
 export const GET_ITEMS = gql`
-  query storeItems($search: String!) {
-    items(search: $search) {
+  query storeItems($search: String!, $userId: ID!) {
+    items(search: $search, userId: $userId) {
+      userId
       itemName
       itemId
       photoUrl
@@ -23,6 +34,7 @@ export const GET_ITEMS = gql`
     }
   }
 `;
+
 export const GET_CART = gql`
   query userStoreItems($userId: ID!) {
     userStoreItems(userId: $userId) {
@@ -31,12 +43,14 @@ export const GET_CART = gql`
       address
       storeTotalPrice
       listItems {
-        id
+        itemId
         itemName
         itemPhotoUrl
         price
         quantity
         itemTotal
+        storeItemId
+        userStoreItemId
       }
     }
   }
