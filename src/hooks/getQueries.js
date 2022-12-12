@@ -68,6 +68,5 @@ export const useUserStores = (userId) => {
       userId
     }
   })
-  console.log('user store', data)
   return { data, error, loading, refetch }
 }
