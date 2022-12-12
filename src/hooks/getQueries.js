@@ -63,11 +63,11 @@ export const GET_USER_STORES = gql`
 `
 
 export const useUserStores = (userId) => {
-  const { data, loading, error } = useQuery(GET_USER_STORES, {
+  const { data, loading, error, refetch } = useQuery(GET_USER_STORES, {
     variables: {
       userId
     }
   })
   console.log('user store', data)
-  return { data, error, loading }
+  return { data, error, loading, refetch }
 }
