@@ -26,6 +26,16 @@ export const DELETE_ITEM_MUTATION = gql`
   }
 `;
 
+export const DELETE_USER_STORE = gql`
+  mutation destroyUserStore($id: ID!) {
+    destroyUserStore(
+      input: {id: $id}
+    ) {
+      id
+    }
+  }
+`
+
 export const CREATE_USER_STORE = gql`
     mutation createUserStore($userId: ID!, $storeId: ID!) {
       createUserStore(
@@ -41,14 +51,6 @@ export const CREATE_USER_STORE = gql`
     }
 `
 
-export const DELETE_USER_STORE = gql`
-    mutation destroyUserStore($id: ID!) {
-      destroyUserStore(input: {id: $id}) {
-        id
-      }
-    }
-`
-
 export const UPDATE_CART_QUANTITY = gql`
     mutation updateUserStoreItem($id: ID!, $quantity: Int!) {
       updateUserStoreItem(input: {id: $id, quantity: $quantity}) {
@@ -56,4 +58,13 @@ export const UPDATE_CART_QUANTITY = gql`
         quantity
       }
     }
+`
+export const DESTROY_ALL_USER_STORES = gql`
+  mutation destroyAllUserStores($userId: String!) {
+    destroyAllUserStores(
+      input: {userId: $userId}
+    ) {
+      userId
+    }
+  }
 `
