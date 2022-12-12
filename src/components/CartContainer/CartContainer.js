@@ -2,17 +2,18 @@ import React from "react";
 import "./CartContainer.css";
 import CartItem from "../CartItem/CartItem";
 
-const CartContainer = ({ storeTotalPrice, storeName, storeAddress, cartItems }) => {
+const CartContainer = ({ storeTotalPrice, onCartChange, storeName, storeAddress, cartItems }) => {
 
   const itemCards = cartItems.map((item) => {
     return (
       <CartItem
-        id={item.id}
-        key={item.id}
+        id={item.userStoreItemId}
+        key={item.storeItemId}
         itemName={item.itemName}
         quantity={item.quantity}
         photoUrl={item.itemPhotoUrl}
         itemTotal={item.itemTotal}
+        onCartChange={onCartChange}
       />
     );
   });

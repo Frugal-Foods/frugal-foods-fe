@@ -1,26 +1,39 @@
 import React, {useState} from 'react';
 import { useMutation } from "@apollo/client";
 import './CartItem.css';
-import { DELETE_ITEM_MUTATION } from '../../hooks/postMutations';
+import { DELETE_ITEM_MUTATION, UPDATE_CART_QUANTITY } from '../../hooks/postMutations';
 import { FaChevronCircleLeft } from "react-icons/fa";
 import { FaChevronCircleRight } from "react-icons/fa";
 
-const CartItem = ({id, photoUrl, itemName, itemTotal, quantity}) => {
+const CartItem = ({id, photoUrl, itemName, itemTotal, quantity, onCartChange}) => {
   const [cartQuantity, setCartQuantity] = useState(1);
 
   const [deleteItem] = useMutation(DELETE_ITEM_MUTATION, {
     variables: {
       id: id
+    },
+    onCompleted: () => {
+      onCartChange()
     }
+  })
+
+  const [updateQuantity] = useMutation(UPDATE_CART_QUANTITY, {
+    variables: {
+      id: id
+    }, 
+    onCompleted: (data) => {
+      setCartQuantity(data.quantity)
+    }
+
   })
   
   const handleQuantityIncrease = () => {
-      setCartQuantity(cartQuantity + 1);
+      updateQuantity({variables: {quantity: cartQuantity+1}})
   };
 
   const handleQuantityDecrease = () => {
     if (quantity > 1) {
-      setCartQuantity(cartQuantity - 1);
+      updateQuantity({variables: {quantity: cartQuantity-1}})
     }
   };
 
@@ -45,7 +58,7 @@ const CartItem = ({id, photoUrl, itemName, itemTotal, quantity}) => {
             />
           </button>
         </div>
-      <p>Item Total: ${itemTotal}</p>
+      <p>Item Total: ${itemTotal.toFixed(2)}</p>
       <button onClick={() => deleteItem(id)}>🗑</button>
     </section>
   )

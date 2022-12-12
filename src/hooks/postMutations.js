@@ -48,3 +48,12 @@ export const DELETE_USER_STORE = gql`
       }
     }
 `
+
+export const UPDATE_CART_QUANTITY = gql`
+    mutation updateUserStoreItem($id: ID!, $quantity: Int!) {
+      updateUserStoreItem(input: {id: $id, quantity: $quantity}) {
+        id
+        quantity
+      }
+    }
+`

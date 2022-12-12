@@ -20,7 +20,7 @@ const SearchPage = () => {
       <SearchForm queryStoreItems={queryStoreItems} />
       {loading && <p>Loading...</p>}
       {!loading && !error && <SearchContainer items={data?.items} />}
-      {error && <p>Error: {error}</p>}
+      {/* {error && <p>Error: {error}</p>} */}
     </section>
   );
 };

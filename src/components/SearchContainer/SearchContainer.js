@@ -9,7 +9,7 @@ const SearchContainer = ({ items }) => {
   const storeItemCards = items.map((item) => {
     return (
       <SearchItem
-        id={parseInt(item.storeItemId)}
+        id={item.storeItemId}
         key={item.storeItemId}
         itemName={item.itemName}
         photoUrl={item.photoUrl}

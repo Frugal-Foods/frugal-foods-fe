@@ -1,4 +1,4 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
 
 export const GET_ALL_STORES = gql`
   query GetStores($zipcode: String!) {
@@ -21,7 +21,7 @@ export const GET_USER_STORES = gql`
 `
 
 export const GET_ITEMS = gql`
-  query storeItems($search: String!, $userId: ID!) {
+  query storeItems($search: String!, $userId: Int!) {
     items(search: $search, userId: $userId) {
       userId
       itemName
@@ -56,12 +56,5 @@ export const GET_CART = gql`
   }
 `;
 
-export const useCartItems = (userId) => {
-  const { data, loading, error } = useQuery(GET_CART, {
-    variables: {
-      userId,
-    },
-  });
-  return { data, loading, error };
-};
+
 
