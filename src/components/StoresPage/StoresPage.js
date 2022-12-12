@@ -3,20 +3,13 @@ import StoresContainer from "../StoresContainer/StoresContainer";
 import ZipcodeSearch from "../ZipcodeSearch/ZipcodeSearch";
 import "./StoresPage.css";
 import { useLazyQuery } from "@apollo/client";
-import { GET_STORES } from "../../hooks/getQueries";
+import { GET_ALL_STORES } from "../../hooks/getQueries";
 
 const StoresPage = () => {
-  const [getStores, {loading, error, data}] = useLazyQuery(GET_STORES)
-  // console.log(data)
-  // const [getUserStores] = useLazyQuery(GET_USER_STORES)
-  // const { data, loading, error } = useUserStores(userId);
-
-  // const queryUserStores = () => {
-  //   getUserStores({variables: {userId: 5}})
-  // }
+  const [getAllStores, {data, loading, error}] = useLazyQuery(GET_ALL_STORES)
 
   const queryStores = (searchValue) => {
-    getStores({variables: {zipcode: searchValue}})
+    getAllStores({variables: {zipcode: searchValue}})
   }
 
   return (
