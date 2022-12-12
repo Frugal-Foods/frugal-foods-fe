@@ -24,11 +24,11 @@ const Header = () => {
             />
             <Link to='/'>
                 <button className='home' onClick={() => destroyStores()}>Start a New Session</button>
+            <button className='list'>Find Stores</button>
             </Link>
             <div className='logo-container'> 
                 <img className='frugal-logo' src={frugalLogo} alt='frugal foods logo'/>
             </div>
-            <button className='list'>Grocery List</button>
             <Link to='/search' className='search'>Search</Link>
             <Link to='/cart'>
                 <div className='header-openBasket'>
