@@ -6,7 +6,7 @@ import { FaChevronCircleLeft } from "react-icons/fa";
 import { FaChevronCircleRight } from "react-icons/fa";
 
 const CartItem = ({id, photoUrl, itemName, itemTotal, quantity, onCartChange}) => {
-  const [cartQuantity, setCartQuantity] = useState(quantity);
+  const [cartQuantity, setCartQuantity] = useState(1);
 
   const [deleteItem] = useMutation(DELETE_ITEM_MUTATION, {
     variables: {
@@ -32,7 +32,7 @@ const CartItem = ({id, photoUrl, itemName, itemTotal, quantity, onCartChange}) =
   };
 
   const handleQuantityDecrease = () => {
-    if (cartQuantity > 1) {
+    if (quantity > 1) {
       updateQuantity({variables: {quantity: cartQuantity-1}})
     }
   };
