@@ -1,14 +1,26 @@
 import React, { useContext } from "react";
 import CartContainer from "../CartContainer/CartContainer";
-import { useCartItems } from "../../hooks/getQueries";
+import { GET_CART } from "../../hooks/getQueries";
 import { UserContext } from "../../context/userContext";
+import { useQuery } from "@apollo/client";
 import "./CartPage.css";
 
 const CartPage = () => {
   const userId = useContext(UserContext);
-  const { data, loading, error } = useCartItems(userId);
+  const { data, loading, error, refetch } = useQuery(GET_CART, {
+    variables: {
+      userId,
+    },
+  });
 
-  const cartsByStore = data?.userStoreItems.map((store) => {
+  const handleCartChange = () => {
+    refetch();
+  };
+
+  const nonEmptyStores = data?.userStoreItems.filter(
+    (store) => store.listItems.length > 0
+  );
+  const cartsByStore = nonEmptyStores?.map((store) => {
     return (
       <CartContainer
         id={store.storeId}
@@ -17,6 +29,7 @@ const CartPage = () => {
         storeTotalPrice={store.storeTotalPrice}
         storeName={store.name}
         storeAddress={store.address}
+        onCartChange={handleCartChange}
       />
     );
   });
@@ -24,7 +37,6 @@ const CartPage = () => {
   return (
     <section className="cart-page">
       {loading && <p>Loading...</p>}
-      {cartsByStore}
       {!loading && !error && cartsByStore}
       {error && <p>Error: {error}</p>}
     </section>
