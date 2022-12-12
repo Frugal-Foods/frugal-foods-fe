@@ -14,7 +14,7 @@ const StoreCard = ({ id, name, address }) => {
 
   const [addStore] = useMutation(CREATE_USER_STORE, {
     variables: {
-      userId: 5,
+      userId: 5, 
       storeId: id
     },
     onCompleted: () => {
