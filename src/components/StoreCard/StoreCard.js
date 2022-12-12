@@ -10,7 +10,7 @@ import { UserContext } from "../../context/userContext";
 const StoreCard = ({ storeId, name, address, userStoreId, onChange }) => {
   const user = useContext(UserContext);
   const [checked, setChecked] = useState(userStoreId?true:false);
-  const [addStore, { data, loading, error }] = useMutation(CREATE_USER_STORE, {
+  const [addStore, { data }] = useMutation(CREATE_USER_STORE, {
     variables: {
       userId: user,
       storeId: parseInt(storeId),

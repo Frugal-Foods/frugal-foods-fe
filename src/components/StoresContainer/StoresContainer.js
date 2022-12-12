@@ -8,7 +8,7 @@ import { GET_USER_STORES } from "../../hooks/getQueries";
 
 const StoresContainer = ({ stores }) => {
   const user = useContext(UserContext)
-  const {data, loading, error, refetch} = useQuery(GET_USER_STORES, {
+  const {data, loading, refetch} = useQuery(GET_USER_STORES, {
     variables: {
       userId: user
     }
