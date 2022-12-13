@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './SearchForm.css';
 
 const SearchForm = ({ queryStoreItems }) => {
   const [searchValue, setSearchValue] = useState("");
@@ -26,10 +27,11 @@ const SearchForm = ({ queryStoreItems }) => {
         type="text"
         placeholder="Enter Grocery Item"
         name="groceryItem"
+        className="search-input"
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      <button onClick={(event) => handleSubmit(event)}>Search</button>
+      <button className="item-search-btn" onClick={(event) => handleSubmit(event)}>Search</button>
       {domError && <h4 className="error-message">{domError}</h4>}
     </div>
   );

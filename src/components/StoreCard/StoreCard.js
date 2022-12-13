@@ -9,7 +9,7 @@ import { UserContext } from "../../context/userContext";
 
 const StoreCard = ({ storeId, name, address, userStoreId, onChange }) => {
   const user = useContext(UserContext);
-  const [checked, setChecked] = useState(userStoreId?true:false);
+  const [checked, setChecked] = useState(userStoreId ? true : false);
   const [addStore, { data }] = useMutation(CREATE_USER_STORE, {
     variables: {
       userId: user,
@@ -17,7 +17,7 @@ const StoreCard = ({ storeId, name, address, userStoreId, onChange }) => {
     },
     onCompleted: () => {
       setChecked(true);
-      onChange()
+      onChange();
     },
   });
 
@@ -27,7 +27,7 @@ const StoreCard = ({ storeId, name, address, userStoreId, onChange }) => {
     },
     onCompleted: () => {
       setChecked(false);
-      onChange()
+      onChange();
     },
   });
 

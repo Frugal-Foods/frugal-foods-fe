@@ -2,9 +2,8 @@ import React from "react";
 import SearchItem from "../SearchItem/SearchItem";
 
 const SearchContainer = ({ items }) => {
-    console.log({items})
   if (!items) {
-    return null;
+    return <p>No items found!</p>;
   }
   const storeItemCards = items.map((item) => {
     return (

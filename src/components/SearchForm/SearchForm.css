@@ -1,0 +1,15 @@
+.item-search-btn {
+    font-family: 'Ruda', sans-serif;
+    background-color: #1C76BC;
+    color: white;
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 2rem;
+}
+
+.search-input {
+    padding: 0.3rem;
+}

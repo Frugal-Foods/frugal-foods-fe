@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import CartContainer from "../CartContainer/CartContainer";
 import { GET_CART } from "../../hooks/getQueries";
 import { UserContext } from "../../context/userContext";
@@ -11,6 +11,10 @@ const CartPage = () => {
     variables: {
       userId,
     },
+  });
+
+  useEffect(() => {
+    refetch();
   });
 
   const handleCartChange = () => {

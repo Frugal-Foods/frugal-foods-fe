@@ -1,12 +1,22 @@
 .stores-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
+    justify-content: center;
     margin-top: 20px;
 }
 
 .store-cards {
-    height: 400px;
-    padding: 2px;
+    padding: 2rem;
 } 
+
+.shop-btn {
+    font-family: 'Ruda', sans-serif;
+    background-color: #F36B22;
+    color: white;
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
