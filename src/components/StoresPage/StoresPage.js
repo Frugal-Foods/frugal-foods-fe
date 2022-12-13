@@ -8,29 +8,32 @@ import { UserContext } from "../../context/userContext";
 import { DESTROY_ALL_USER_STORES } from "../../hooks/postMutations";
 
 const StoresPage = () => {
-  const user = useContext(UserContext)
-  const [stores, setStores] = useState([])
-  const [getAllStores, {loading, error}] = useLazyQuery(GET_ALL_STORES, {
-    onCompleted: (data) => setStores(data?.stores)
-  })
+  const user = useContext(UserContext);
+  const [stores, setStores] = useState([]);
+  const [getAllStores, { loading, error }] = useLazyQuery(GET_ALL_STORES, {
+    onCompleted: (data) => setStores(data?.stores),
+  });
   const [destroyStores] = useMutation(DESTROY_ALL_USER_STORES, {
     variables: {
-        userId: user.toString()
+      userId: user.toString(),
     },
-    onCompleted: () => setStores([])
-})
+    onCompleted: () => window.location.reload(true),
+  });
 
   const queryStores = (searchValue) => {
-    getAllStores({variables: {zipcode: searchValue}})
-  }
+    getAllStores({ variables: { zipcode: searchValue } });
+  };
 
   const handleResetSearch = () => {
-    destroyStores()
-  }
+    destroyStores();
+  };
 
   return (
     <section className="stores-page">
-      <ZipcodeSearch queryStores={queryStores} onResetSearch={handleResetSearch}/>
+      <ZipcodeSearch
+        queryStores={queryStores}
+        onResetSearch={handleResetSearch}
+      />
       {loading && <p>Loading...</p>}
       {!loading && !error && <StoresContainer stores={stores} />}
       {error && <p>Error: {error}</p>}

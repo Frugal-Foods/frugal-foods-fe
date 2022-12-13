@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './ZipcodeSearch.css'
 
 const ZipcodeSearch = ({ queryStores, onResetSearch }) => {
   const [searchValue, setSearchValue] = useState("");
@@ -24,13 +25,14 @@ const ZipcodeSearch = ({ queryStores, onResetSearch }) => {
       <h3>Find Grocery Stores Near You: </h3>
       <input
         type="text"
-        placeholder="Enter zipcode"
+        className="zipcode-input"
+        placeholder="Enter zipcode '80108'"
         name="zipcode"
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      <button onClick={(event) => handleSubmit(event)}>Find Stores</button>
-      <button onClick={() => onResetSearch()}>Reset All</button>
+      <button className="find-stores-btn" onClick={(event) => handleSubmit(event)}>Find Stores</button>
+      <button className="reset-btn" onClick={() => onResetSearch()}>Reset All</button>
       {domError && <h4 className="error-message">{domError}</h4>}
     </div>
   );

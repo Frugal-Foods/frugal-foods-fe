@@ -1,4 +1,13 @@
 .cart-page {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: auto auto;
+}
+
+@media (max-width: 500px) {
+  .cart-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

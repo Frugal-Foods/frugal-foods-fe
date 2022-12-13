@@ -50,7 +50,8 @@ const CartItem = ({
   return (
     <section className="individual-cart-item">
       <img src={photoUrl} alt="grocery-images" />
-      <p>{itemName}</p>
+      <h4>{itemName}</h4>
+      <p>Item Total: ${itemTotal.toFixed(2)}</p>
       <div className="quantity-select">
         <button>
           <FaChevronCircleLeft
@@ -68,8 +69,7 @@ const CartItem = ({
           />
         </button>
       </div>
-      <p>Item Total: ${itemTotal.toFixed(2)}</p>
-      <button onClick={() => deleteItem(id)}>🗑</button>
+      <button className="delete-btn" onClick={() => deleteItem(id)}>Delete 🗑</button>
     </section>
   );
 };
