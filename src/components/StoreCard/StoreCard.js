@@ -1,49 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./StoreCard.css";
-import { CREATE_USER_STORE } from "../../hooks/postMutations";
-import { DELETE_STORE_MUTATION } from "../../hooks/postMutations";
+import {
+  CREATE_USER_STORE,
+  DELETE_USER_STORE,
+} from "../../hooks/postMutations";
 import { useMutation } from "@apollo/client";
-import { useUserStores } from "../../hooks/getQueries";
+import { UserContext } from "../../context/userContext";
 
-const StoreCard = ({ id, name, address }) => {
-  console.log(id, name, address)
-  const [checked, setChecked] = useState(false);
-  const {data, refetch} = useUserStores(5)
-
-  const findUserStoreId = data?.userStores.find(store => store?.id)
-
-  const [addStore] = useMutation(CREATE_USER_STORE, {
+const StoreCard = ({ storeId, name, address, userStoreId, onChange }) => {
+  const user = useContext(UserContext);
+  const [checked, setChecked] = useState(userStoreId?true:false);
+  const [addStore, { data }] = useMutation(CREATE_USER_STORE, {
     variables: {
-      userId: 5, 
-      storeId: id
+      userId: user,
+      storeId: parseInt(storeId),
     },
     onCompleted: () => {
-      refetch()
-    }
-  })
-  const [deleteStore] = useMutation(DELETE_STORE_MUTATION, {
-    variables: {
-      id: findUserStoreId?.id
-    }
-  })
+      setChecked(true);
+      onChange()
+    },
+  });
 
-  const handleChecked = (id) => {
-    setChecked(!checked);
-    if(!checked) {
-      addStore(id);
-    } else if(checked) {
-      deleteStore(id)
+  const [deleteStore] = useMutation(DELETE_USER_STORE, {
+    variables: {
+      id: userStoreId || data?.id,
+    },
+    onCompleted: () => {
+      setChecked(false);
+      onChange()
+    },
+  });
+
+  const handleChecked = () => {
+    if (!checked) {
+      addStore();
+    } else {
+      deleteStore();
     }
   };
 
   return (
     <div>
-      <section className="individual-store-card" key={id}>
-        <input type="checkbox" checked={checked} onChange={() => handleChecked(id)} />
+      <section className="individual-store-card" key={storeId}>
+        <input type="checkbox" checked={checked} onChange={handleChecked} />
         <p>{name}</p>
         <p>{address}</p>
       </section>
-        {/* <button onClick={() => addStore()}>Start Shopping</button> */}
     </div>
   );
 };
