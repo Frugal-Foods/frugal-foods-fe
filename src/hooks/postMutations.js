@@ -57,3 +57,13 @@ export const UPDATE_CART_QUANTITY = gql`
       }
     }
 `
+
+export const DESTROY_ALL_USER_STORES = gql`
+  mutation destroyAllUserStores($userId: String!) {
+    destroyAllUserStores(
+      input: {userId: $userId}
+    ) {
+      userId
+    }
+  }
+`

@@ -4,8 +4,8 @@ import ZipcodeSearch from "../ZipcodeSearch/ZipcodeSearch";
 import "./StoresPage.css";
 import { useLazyQuery, useMutation } from "@apollo/client";
 import { GET_ALL_STORES } from "../../hooks/getQueries";
-import { DESTROY_ALL_USER_STORES } from '../../hooks/postMutations';
 import { UserContext } from "../../context/userContext";
+import { DESTROY_ALL_USER_STORES } from "../../hooks/postMutations";
 
 const StoresPage = () => {
   const user = useContext(UserContext)
