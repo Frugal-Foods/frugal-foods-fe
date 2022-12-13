@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ZipcodeSearch = ({ queryStores }) => {
+const ZipcodeSearch = ({ queryStores, onResetSearch }) => {
   const [searchValue, setSearchValue] = useState("");
   const [domError, setDomError] = useState("");
 
@@ -30,6 +30,7 @@ const ZipcodeSearch = ({ queryStores }) => {
         onChange={(e) => setSearchValue(e.target.value)}
       />
       <button onClick={(event) => handleSubmit(event)}>Find Stores</button>
+      <button onClick={() => onResetSearch()}>Reset Search</button>
       {domError && <h4 className="error-message">{domError}</h4>}
     </div>
   );

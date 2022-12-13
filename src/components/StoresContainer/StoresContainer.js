@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import StoreCard from "../StoreCard/StoreCard";
 import './StoresContainer.css'
 import { Link } from 'react-router-dom'
@@ -13,6 +13,10 @@ const StoresContainer = ({ stores }) => {
       userId: user
     }
   })
+
+  useEffect(() => {
+    refetch()
+  }, [stores]);
 
   const handleUserStoresChange = () => {
     refetch()
@@ -38,9 +42,11 @@ const StoresContainer = ({ stores }) => {
   return (
     <section className="stores-container">
       <div className="store-cards">{storeCards}</div>
+    {storeCards.length > 0 && 
       <Link to={'/search'}>
       <button>Start Shopping!</button>
       </Link>
+    }
     </section>
   );
 };

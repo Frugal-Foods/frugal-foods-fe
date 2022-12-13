@@ -22,7 +22,7 @@ const CartContainer = ({ storeTotalPrice, onCartChange, storeName, storeAddress,
   <section className="cart-container">
     <h2>{storeName}</h2>
     <p>{storeAddress}</p>
-    <h3>Total: ${storeTotalPrice}</h3>
+    <h3>Total: ${storeTotalPrice.toFixed(2)}</h3>
     <div>{itemCards}</div>
     </section>
   )

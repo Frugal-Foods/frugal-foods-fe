@@ -2,7 +2,6 @@ import React from "react";
 import SearchItem from "../SearchItem/SearchItem";
 
 const SearchContainer = ({ items }) => {
-    console.log({items})
   if (!items) {
     return null;
   }

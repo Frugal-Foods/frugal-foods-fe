@@ -19,10 +19,11 @@ const CartItem = ({id, photoUrl, itemName, itemTotal, quantity, onCartChange}) =
 
   const [updateQuantity] = useMutation(UPDATE_CART_QUANTITY, {
     variables: {
-      id: id
+      id: id 
     }, 
     onCompleted: (data) => {
-      setCartQuantity(data.quantity)
+      setCartQuantity(data.updateUserStoreItem.quantity)
+      onCartChange()
     }
 
   })
@@ -49,7 +50,7 @@ const CartItem = ({id, photoUrl, itemName, itemTotal, quantity, onCartChange}) =
               onClick={() => handleQuantityDecrease()}
             />
           </button>
-          <span> {quantity} </span>
+          <span> {cartQuantity} </span>
           <button>
             <FaChevronCircleRight
               size={16}
