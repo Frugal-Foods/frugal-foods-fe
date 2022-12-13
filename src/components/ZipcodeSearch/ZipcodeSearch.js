@@ -30,7 +30,7 @@ const ZipcodeSearch = ({ queryStores, onResetSearch }) => {
         onChange={(e) => setSearchValue(e.target.value)}
       />
       <button onClick={(event) => handleSubmit(event)}>Find Stores</button>
-      <button onClick={() => onResetSearch()}>Reset Search</button>
+      <button onClick={() => onResetSearch()}>Reset All</button>
       {domError && <h4 className="error-message">{domError}</h4>}
     </div>
   );

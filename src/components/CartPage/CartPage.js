@@ -14,8 +14,8 @@ const CartPage = () => {
   });
 
   useEffect(() => {
-    refetch()
-  })
+    refetch();
+  });
 
   const handleCartChange = () => {
     refetch();
