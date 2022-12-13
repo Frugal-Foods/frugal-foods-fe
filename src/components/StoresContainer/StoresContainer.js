@@ -16,7 +16,7 @@ const StoresContainer = ({ stores }) => {
 
   useEffect(() => {
     refetch()
-  }, [stores]);
+  });
 
   const handleUserStoresChange = () => {
     refetch()

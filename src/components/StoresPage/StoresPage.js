@@ -10,7 +10,7 @@ import { UserContext } from "../../context/userContext";
 const StoresPage = () => {
   const user = useContext(UserContext)
   const [stores, setStores] = useState([])
-  const [getAllStores, {data, loading, error}] = useLazyQuery(GET_ALL_STORES, {
+  const [getAllStores, {loading, error}] = useLazyQuery(GET_ALL_STORES, {
     onCompleted: (data) => setStores(data?.stores)
   })
   const [destroyStores] = useMutation(DESTROY_ALL_USER_STORES, {
