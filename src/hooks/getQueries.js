@@ -1,4 +1,4 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
 
 export const GET_ALL_STORES = gql`
   query GetStores($zipcode: String!) {
@@ -56,12 +56,5 @@ export const GET_CART = gql`
   }
 `;
 
-export const useUserStores = (userId) => {
-  const { data, loading, error, refetch } = useQuery(GET_USER_STORES, {
-    variables: {
-      userId
-    }
-  })
-  console.log('user store', data)
-  return { data, error, loading, refetch }
-}
+
+
