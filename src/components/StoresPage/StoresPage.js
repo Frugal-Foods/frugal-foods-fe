@@ -1,29 +1,41 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import StoresContainer from "../StoresContainer/StoresContainer";
 import ZipcodeSearch from "../ZipcodeSearch/ZipcodeSearch";
 import "./StoresPage.css";
-import { useLazyQuery } from "@apollo/client";
-import { GET_STORES } from "../../hooks/getQueries";
+import { useLazyQuery, useMutation } from "@apollo/client";
+import { GET_ALL_STORES } from "../../hooks/getQueries";
+import { UserContext } from "../../context/userContext";
+import { DESTROY_ALL_USER_STORES } from "../../hooks/postMutations";
 
 const StoresPage = () => {
-  const [getStores, {loading, error, data}] = useLazyQuery(GET_STORES)
-  // console.log(data)
-  // const [getUserStores] = useLazyQuery(GET_USER_STORES)
-  // const { data, loading, error } = useUserStores(userId);
-
-  // const queryUserStores = () => {
-  //   getUserStores({variables: {userId: 5}})
-  // }
+  const user = useContext(UserContext);
+  const [stores, setStores] = useState([]);
+  const [getAllStores, { loading, error }] = useLazyQuery(GET_ALL_STORES, {
+    onCompleted: (data) => setStores(data?.stores),
+  });
+  const [destroyStores] = useMutation(DESTROY_ALL_USER_STORES, {
+    variables: {
+      userId: user.toString(),
+    },
+    onCompleted: () => window.location.reload(true),
+  });
 
   const queryStores = (searchValue) => {
-    getStores({variables: {zipcode: searchValue}})
-  }
+    getAllStores({ variables: { zipcode: searchValue } });
+  };
+
+  const handleResetSearch = () => {
+    destroyStores();
+  };
 
   return (
     <section className="stores-page">
-      <ZipcodeSearch queryStores={queryStores}/>
+      <ZipcodeSearch
+        queryStores={queryStores}
+        onResetSearch={handleResetSearch}
+      />
       {loading && <p>Loading...</p>}
-      {!loading && !error && <StoresContainer stores={data?.stores} />}
+      {!loading && !error && <StoresContainer stores={stores} />}
       {error && <p>Error: {error}</p>}
     </section>
   );

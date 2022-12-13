@@ -2,14 +2,13 @@ import React from "react";
 import SearchItem from "../SearchItem/SearchItem";
 
 const SearchContainer = ({ items }) => {
-    console.log({items})
   if (!items) {
-    return null;
+    return <p>No items found!</p>;
   }
   const storeItemCards = items.map((item) => {
     return (
       <SearchItem
-        id={parseInt(item.storeItemId)}
+        id={item.storeItemId}
         key={item.storeItemId}
         itemName={item.itemName}
         photoUrl={item.photoUrl}

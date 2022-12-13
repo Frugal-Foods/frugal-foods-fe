@@ -15,7 +15,6 @@ a {
     position: relative;
     text-align: center; */
     color: white;
-
     display: flex;
     align-items: center;
     /* background-color: #f7f7f7; */
@@ -25,22 +24,22 @@ a {
     width: 100%;
 }
 
-.home {
+.stores {
     position: absolute;
     top: 50%;
     left: 15%;
     transform: translate(-50%, -50%);
-    /* -ms-transform: translate(-50%, -50%); */
+    -ms-transform: translate(-50%, -50%);
     background-color: rgb(29, 113, 20);
     color: white;
-    font-size: 16px;
-    padding: 12px 24px;
+    font-size: 1rem;
+    padding: 0.5rem 1.3rem;
     border: none;
     cursor: pointer;
     border-radius: 5px;
 }
 
-.list {
+/* .stores {
     position: absolute;
     top: 30%;
     left: 87%;
@@ -53,26 +52,25 @@ a {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
+} */
 
 .search {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 87%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color: rgb(29, 113, 20);
     color: white;
-    font-size: 16px;
-    padding: 12px 24px;
+    font-size: 1rem;
+    padding: 0.5rem 1.3rem;
     border: none;
     cursor: pointer;
     border-radius: 5px;
 }
 
-.header-container .home:hover,
 .search:hover,
-.list:hover {
+.stores:hover {
     background-color: black;
 }
 
@@ -80,36 +78,25 @@ a {
     position: absolute;
     top: 50%;
     left: 50%;
-    background-color: white;
-    width: 42%;
-    height: 73%;
-    border: 2px solid black;
-    border-bottom-left-radius: 65% 50%;
-    border-bottom-right-radius: 65% 50%;
-    border-top-left-radius: 65% 75%;
-    border-top-right-radius: 65% 75%;
+    width: 35%;
     transform: translate(-50%, -50%);
-    text-shadow: 0px 0px 3px rgb(18 20 26 / 88%);
 }
 
 .header-openBasket {
-    color: rgb(34, 158, 51);
+    color: #D32A92;  
     text-decoration: none;
     position: absolute;
     display: flex;
     align-items: flex-start;
-    top: 2%;
+    top: 5%;
     left: 85%;
 }
 
 .header-openBasket:hover {
-    color: rgb(213, 213, 7);
+    color: #E9AB1F;
 }
 
-
 .frugal-logo {
-    /* opacity: 0; */
     position: relative;
-    width: 80%;
-    top: 7%;
+    width: 100%;
 }
