@@ -1,0 +1,19 @@
+{
+  "data": 
+  {
+    "stores": [
+      {
+        "__typename": "Store",
+        "address": "1155 E 9Th Ave, Denver, CO, 80218",
+        "name": "Test King Soopers - CAPITOL HILL",
+        "id": "84"
+      }, 
+      {
+        "__typename": "Store",
+        "address": "1355 Krameria St, Denver, CO, 80220",
+        "name": "Test King Soopers - MAYFAIR",
+        "id": "85"
+      }
+    ]
+  }
+}

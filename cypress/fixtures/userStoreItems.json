@@ -1,0 +1,23 @@
+{
+  "data": {
+      "userStoreItems": [
+        {
+          "storeId": 84,
+          "name": "King Soopers - CAPITOL HILL",
+          "address": "1155 E 9Th Ave, Denver, CO, 80218",
+          "storeTotalPrice": 1.38,
+          "listItems": [ {
+            "userId": 5,
+            "itemName": "Organic Banana",
+            "itemId": "1774",
+            "itemPhotoUrl": "https://www.kroger.com/product/images/small/front/0000000094011",
+            "quantity": 2,
+            "price": 0.69,
+            "storeItemId": "21482",
+            "itemTotal": 1.38
+        }
+      ]
+      }
+   ]
+ }
+}
