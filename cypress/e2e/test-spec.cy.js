@@ -32,7 +32,7 @@ describe('Frugal Foods E2E', () => {
     cy.contains('.footer > :nth-child(1)', 'Frugal Foods')
   })
 
-  it('should allow user to get a store', () => {
+  it.skip('should allow user to get a store', () => {
     cy.intercept('https://frugal-foods-be.fly.dev/graphql', {
       fixture: "stores.json"
     }).as('stores')
@@ -117,7 +117,7 @@ describe('Frugal Foods E2E', () => {
 
   it('should have a delete button', () => {
     cy.get('.delete-btn').click()
-  })
+  }) 
 
   it('should have a product image', () => {
     cy.get('.individual-cart-item').find("img").should('be.visible')
