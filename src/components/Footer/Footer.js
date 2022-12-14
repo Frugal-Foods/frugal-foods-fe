@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <div className="footer-container">
       <div className="name-container">
-        <h4>Danielle Sweeny</h4>
+        <h4 className='student-name'>Danielle Sweeny</h4>
         <div className="links-container">
           <a href="https://www.linkedin.com/in/danielle-sweeny-75b50b84/">
             <img
@@ -28,7 +28,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="name-container">
-        <h4>Nicole Forseth</h4>
+        <h4 className='student-name'>Nicole Forseth</h4>
         <div className="links-container">
           <a href="https://www.linkedin.com/in/nicoleforseth/">
             <img
@@ -49,7 +49,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="name-container">
-        <h4>Rebecka Hendricks</h4>
+        <h4 className='student-name'>Rebecka Hendricks</h4>
         <div className="links-container">
           <a href="https://www.linkedin.com/in/rebecka-hendricks/">
             <img
@@ -70,7 +70,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="name-container">
-        <h4>Carter Ball</h4>
+        <h4 className='student-name'>Carter Ball</h4>
         <div className="links-container">
           <a href="https://www.linkedin.com/in/carter-ball-01b669160/">
             <img
@@ -91,7 +91,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="name-container">
-        <h4>Alaina Kneiling</h4>
+        <h4 className='student-name'>Alaina Kneiling</h4>
         <div className="links-container">
           <a href="https://www.linkedin.com/in/alaina-noel/">
             <img
@@ -112,7 +112,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="name-container">
-        <h4>Sid Mann</h4>
+        <h4 className='student-name'>Sid Mann</h4>
         <div className="links-container">
           <a href="https://linkedin.com/in/sidmann">
             <img
@@ -133,7 +133,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="name-container">
-        <h4>Derek Cooper</h4>
+        <h4 className='student-name'>Derek Cooper</h4>
         <div className="links-container">
           <a href="https://www.linkedin.com/in/derek-cooper-a8798323a/">
             <img
