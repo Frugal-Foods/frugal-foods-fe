@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [About The Project](#about-the-project)
+- [Project Spec](#project-spec)
+- [Technologies](#technologies)
+- [Getting Started](#getting-started)
+- [Front End Installation](#fe-installation)
+- [Back End Installation](#be-installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Contact](#contact)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## About The Project
+Frugal Foods is a bargain grocery shopping application. The user is met at the homescreen with a zipcode search, where they will enter their zipcode and search stores nearest to them. They are able to then select stores they want to shop at and POST those stores to our BE server to be associated with their user ID. From this point the user is able to search for specific grocery items from the stores they've selected and compare prices to find the most affordable option. The user can then add a grocery item to their "cart", where they will see a detailed list of what they're purchasing broken down by store. Additionally, there will be a sum total for what they will spend at each store and what they will be spending overall. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[Deployed Link](https://student-flashcards-final.vercel.app/)
+![2022-11-12 17 59 46](https://user-images.githubusercontent.com/11345457/201500572-140f2bc8-eacb-4cab-9b4e-56c2805ce8fe.gif)
+![2022-11-12 18 02 59](https://user-images.githubusercontent.com/11345457/201500618-29ee3b1d-e2ee-40ef-903a-6b85cbd26f3f.gif)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Spec
 
-### `npm run build`
+Frugal Foods is the capstone project built in weeks 19-21 of [Turing School of Software and Design](https://turing.edu/) front-end and back-end engineering program. The goals of this [group project]([https://frontend.turing.edu/projects/module-3/showcase.html](https://mod4.turing.edu/projects/capstone/)) were to:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Gain exposure working on a full stack team
+- Teach ourselves a new technology (we chose GraphQL for both the FE and BE teams)
+- Utilize Lighthouse and Wave for accessibility
+- Utilize React and React Router
+- Test the UI/UX using Cypress
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies
 
-### `npm run eject`
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
+![Apollo GraphQL](https://img.shields.io/badge/Apollo%20GraphQL-311C87?&style=for-the-badge&logo=Apollo%20GraphQL&logoColor=white)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- GETTING STARTED -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You can find both the FE repository and BE repository [here]([https://github.com/dsweeny1/Student-Flashcards-final](https://github.com/orgs/Frugal-Foods/repositories)).
 
-## Learn More
+### Front End Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone both repos, making sure to add them to their own directories
+   ```sh
+   git clone git@github.com:Frugal-Foods/frugal-foods-fe.git
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. For Student Flashcards: Install NPM packages
+   ```sh
+   npm install
+   npm start
+   ```
+3. Explore the website.
 
-### Code Splitting
+### [Back End Installation](https://github.com/Frugal-Foods/Frugal-Foods-BE)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Analyzing the Bundle Size
+<!-- USAGE EXAMPLES -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Usage
+- [ ] Allow for price comparison for those grocery shopping on a budget
 
-### Making a Progressive Web App
+## Future Iterations:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- [ ] Due to rate limiting for free usage of both the Target and Kroger API's, our prototype only includes data from two zipcodes. Our goal moving forward to make this application more dynamic is to make live API calls to return data for any user in any zipcode.
+- [ ] Implement authentication, allowing a user to create an account and have their popular stores and items remembered
+- [ ] Implement 'shop by department' feature that allows user to browse all products for a store along with the ability to search for a specific item.
+- [ ] Collect data for other popular grocery stores to allow the user more options when choosing stores near them.
+- [ ] Implement 'cheapest in one stop' feature that allows a user to search all items on their grocery list and see which store would have the cheapest total if they only wanted to stop at one store.
+- [ ] Implement a map feature that creates a route for the user depending on which stores were chosen.
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Deployment
+## Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+We utilized tesing to create a smooth user experience using [Cypress](https://www.cypress.io/).
 
-### `npm run build` fails to minify
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- CONTACT -->
+
+## Contact
+
+Danielle Sweeny - [LinkedIn](https://www.linkedin.com/in/danielle-sweeny-75b50b84/) [GitHub](https://github.com/dsweeny1)
+Nicole Forseth - [LinkedIn](https://www.linkedin.com/in/nicoleforseth/) [GitHub](https://github.com/forsethnico)
+Derek Cooper - [LinkedIn](https://www.linkedin.com/in/derek-cooper-a8798323a/) [GitHub](https://github.com/coopercodex)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
