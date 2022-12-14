@@ -1,0 +1,13 @@
+{
+  "data": 
+  {
+    "userStores": [
+      {
+        "id": "382",
+        "storeId": "84",
+        "userId": 5,
+        "_typename": "Item"
+      }
+    ]
+  }
+}

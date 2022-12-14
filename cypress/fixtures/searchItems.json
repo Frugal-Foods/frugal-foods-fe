@@ -1,0 +1,16 @@
+{
+  "data": {
+      "items": [
+          {
+              "userId": 5,
+              "itemName": "Organic Banana",
+              "itemId": "1774",
+              "photoUrl": "https://www.kroger.com/product/images/small/front/0000000094011",
+              "storeName": "King Soopers - CAPITOL HILL",
+              "price": 0.69,
+              "storeItemId": "21482",
+              "storeId": "84"
+          }
+   ]
+ }
+}
