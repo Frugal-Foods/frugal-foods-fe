@@ -58,11 +58,11 @@ export const GET_CART = gql`
 
 
 
-export const useUserStores = (userId) => {
-  const { data, loading, error, refetch } = useQuery(GET_USER_STORES, {
-    variables: {
-      userId
-    }
-  })
-  return { data, error, loading, refetch }
-}
+// export const useUserStores = (userId) => {
+//   const { data, loading, error, refetch } = useQuery(GET_USER_STORES, {
+//     variables: {
+//       userId
+//     }
+//   })
+//   return { data, error, loading, refetch }
+// }

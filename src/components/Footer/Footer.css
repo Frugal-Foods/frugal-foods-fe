@@ -1,9 +1,30 @@
-.footer {
-  color: black;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  border-top: 1px solid gray;
-  font-size: small;
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #525760;
+  height: 12.5vh;
+  width: 100vw;
+}
+
+.name-container {
+  display: flex;
+  flex-direction: column;
+  width: 10vw
+}
+
+h4 {
+  color: #F6EEEB;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1em;
+  margin: 1%;
+  text-shadow: 0px 10px 5px rgb(95 70 80 / 59%);
+}
+
+.links-container {
+  filter: invert(87%) sepia(4%) saturate(834%) hue-rotate(318deg) brightness(113%) contrast(93%);
+}
+
+.link-logo {
+  height: 5vh;
 }

@@ -7,6 +7,7 @@ import { useQuery } from "@apollo/client";
 import { GET_USER_STORES } from "../../hooks/getQueries";
 
 const StoresContainer = ({ stores }) => {
+  console.log(stores)
   const user = useContext(UserContext);
   const { data, loading, refetch } = useQuery(GET_USER_STORES, {
     variables: {
@@ -25,6 +26,7 @@ const StoresContainer = ({ stores }) => {
   if (!stores || loading) {
     return null;
   }
+  console.log(data.userStores)
   const storeCards = stores.map((store) => {
     const foundUserStore = data?.userStores.find(
       (userStore) => userStore.storeId === store.id
