@@ -9,15 +9,15 @@ export const Footer = () => {
       <div className="name-container">
         <h4 className='student-name'>Danielle Sweeny</h4>
         <div className="links-container">
-          <a href="https://www.linkedin.com/in/danielle-sweeny-75b50b84/">
+          <a href="https://www.linkedin.com/in/danielle-sweeny-75b50b84/" target="_blank" rel="noreferrer">
             <img
-              className="link-logo"
+              className="link-logo" 
               src={linkedinLogo}
               alt="LinkedIn logo"
               height="50vh"
             />
           </a>
-          <a href="https://github.com/dsweeny1">
+          <a href="https://github.com/dsweeny1" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={githubLogo}
@@ -30,7 +30,7 @@ export const Footer = () => {
       <div className="name-container">
         <h4 className='student-name'>Nicole Forseth</h4>
         <div className="links-container">
-          <a href="https://www.linkedin.com/in/nicoleforseth/">
+          <a href="https://www.linkedin.com/in/nicoleforseth/" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={linkedinLogo}
@@ -38,7 +38,7 @@ export const Footer = () => {
               height="50vh"
             />
           </a>
-          <a href="https://github.com/forsethnico">
+          <a href="https://github.com/forsethnico" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={githubLogo}
@@ -51,7 +51,7 @@ export const Footer = () => {
       <div className="name-container">
         <h4 className='student-name'>Rebecka Hendricks</h4>
         <div className="links-container">
-          <a href="https://www.linkedin.com/in/rebecka-hendricks/">
+          <a href="https://www.linkedin.com/in/rebecka-hendricks/" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={linkedinLogo}
@@ -59,7 +59,7 @@ export const Footer = () => {
               height="50vh"
             />
           </a>
-          <a href="https://github.com/rebeckahendricks">
+          <a href="https://github.com/rebeckahendricks" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={githubLogo}
@@ -72,7 +72,7 @@ export const Footer = () => {
       <div className="name-container">
         <h4 className='student-name'>Carter Ball</h4>
         <div className="links-container">
-          <a href="https://www.linkedin.com/in/carter-ball-01b669160/">
+          <a href="https://www.linkedin.com/in/carter-ball-01b669160/" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={linkedinLogo}
@@ -80,7 +80,7 @@ export const Footer = () => {
               height="50vh"
             />
           </a>
-          <a href="https://github.com/cballrun">
+          <a href="https://github.com/cballrun" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={githubLogo}
@@ -93,7 +93,7 @@ export const Footer = () => {
       <div className="name-container">
         <h4 className='student-name'>Alaina Kneiling</h4>
         <div className="links-container">
-          <a href="https://www.linkedin.com/in/alaina-noel/">
+          <a href="https://www.linkedin.com/in/alaina-noel/" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={linkedinLogo}
@@ -101,7 +101,7 @@ export const Footer = () => {
               height="50vh"
             />
           </a>
-          <a href="https://github.com/Alaina-Noel/">
+          <a href="https://github.com/Alaina-Noel/" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={githubLogo}
@@ -114,7 +114,7 @@ export const Footer = () => {
       <div className="name-container">
         <h4 className='student-name'>Sid Mann</h4>
         <div className="links-container">
-          <a href="https://linkedin.com/in/sidmann">
+          <a href="https://linkedin.com/in/sidmann" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={linkedinLogo}
@@ -122,7 +122,7 @@ export const Footer = () => {
               height="50vh"
             />
           </a>
-          <a href="https://github.com/sjmann2">
+          <a href="https://github.com/sjmann2" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={githubLogo}
@@ -135,7 +135,7 @@ export const Footer = () => {
       <div className="name-container">
         <h4 className='student-name'>Derek Cooper</h4>
         <div className="links-container">
-          <a href="https://www.linkedin.com/in/derek-cooper-a8798323a/">
+          <a href="https://www.linkedin.com/in/derek-cooper-a8798323a/" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={linkedinLogo}
@@ -143,7 +143,7 @@ export const Footer = () => {
               height="50vh"
             />
           </a>
-          <a href="https://github.com/coopercodex">
+          <a href="https://github.com/coopercodex" target="_blank" rel="noreferrer">
             <img
               className="link-logo"
               src={githubLogo}
