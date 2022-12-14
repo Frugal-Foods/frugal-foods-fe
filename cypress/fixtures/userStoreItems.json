@@ -14,7 +14,8 @@
             "quantity": 2,
             "price": 0.69,
             "storeItemId": "21482",
-            "itemTotal": 1.38
+            "itemTotal": 1.38,
+            "userStoreItemId": 310
         }
       ]
       }
