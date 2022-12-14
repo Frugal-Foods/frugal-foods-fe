@@ -1,22 +1,32 @@
 
-.footer {
-  border-top: 1 px solid black;
-  padding: 20px;
-  width: 100%;
-  background-color: rgba(245, 243, 243, 0.753);
-   bottom: 0;
-   text-align: center;
-   margin-top: 60vh;
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #525760;
+  height: 12.5vh;
+  width: 100vw;
 }
 
-.footer > p {
-  padding: 2px;
-  font-size: 14px;
-}
-.footer a {
-  color: rgb(9, 9, 9);
+.name-container {
+  display: flex;
+  flex-direction: column;
+  width: 10vw
 }
 
-.footer:hover a:hover {
-  color: rgb(50, 185, 50);
- }
+h4 {
+  color: #F6EEEB;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1em;
+  margin: 1%;
+  text-shadow: 0px 10px 5px rgb(95 70 80 / 59%);
+}
+
+.links-container {
+  filter: invert(87%) sepia(4%) saturate(834%) hue-rotate(318deg) brightness(113%) contrast(93%);
+}
+
+.link-logo {
+  height: 5vh;
+}
+

@@ -26,6 +26,7 @@ const StoresContainer = ({ stores }) => {
   if (!stores || loading) {
     return null;
   }
+  console.log(data.userStores)
   const storeCards = stores.map((store) => {
     const foundUserStore = data?.userStores.find(
       (userStore) => userStore.storeId === store.id

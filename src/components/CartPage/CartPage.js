@@ -12,6 +12,7 @@ const CartPage = () => {
       userId,
     },
   });
+  console.log(data)
 
   useEffect(() => {
     refetch();
