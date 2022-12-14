@@ -30,7 +30,7 @@ const App = () => {
           element={<CartPage />}
         ></Route>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
     </UserContext.Provider> 
   );
