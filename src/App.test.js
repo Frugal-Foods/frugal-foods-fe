@@ -18,6 +18,6 @@ test('renders Frugal Foods app', () => {
     </ApolloProvider>
   </BrowserRouter>
   );
-  const linkElement = screen.getByText('Frugal Foods');
+  const linkElement = screen.getByText('Stores');
   expect(linkElement).toBeInTheDocument();
 });
