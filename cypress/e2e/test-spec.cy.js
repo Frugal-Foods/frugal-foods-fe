@@ -42,20 +42,7 @@ describe('Frugal Foods E2E', () => {
   it('should have a button to go back to search page', () => {
     cy.get('.search').should('have.attr', 'href', '/search')
   })
-
-  it('should allow user to get a store', () => {
-    cy.intercept('https://frugal-foods-be.fly.dev/graphql', {
-      fixture: "stores.json"
-    }).as('stores')
-    cy.get('input').type('80206');
-    cy.get('.find-stores-btn').click()
-    cy.intercept('https://frugal-foods-be.fly.dev/graphql', {
-      fixture: "userStores.json"
-    }).as('userStores')
-    // cy.get(':nth-child(1) > .individual-store-card')
-    cy.get(':nth-child(1) > .individual-store-card > :nth-child(2)').contains("Test King Soopers - CAPITOL HILL")
-    // cy.get(':nth-child(2) > .individual-store-card > :nth-child(2)').contains("Test King Soopers - MAYFAIR")
-  })
+  
 })
 
 describe('Search Page', () => {
