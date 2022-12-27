@@ -5,7 +5,6 @@ import CartItem from "../CartItem/CartItem";
 const CartContainer = ({ storeTotalPrice, onCartChange, storeName, storeAddress, cartItems }) => {
 
   const itemCards = cartItems.map((item) => {
-    console.log({cartItems})
     return (
       <CartItem
         id={item.userStoreItemId}
