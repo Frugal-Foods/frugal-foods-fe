@@ -9,11 +9,11 @@ import SearchPage from "../SearchPage/SearchPage";
 import StoresPage from "../StoresPage/StoresPage";
 import CartPage from "../CartPage/CartPage";
 import { GET_USER } from "../../hooks/getQueries";
-import { useLazyQuery, useMutation } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 
 const App = () => {
   const [user, setUser] = useState(0);
-  const [getUser, { loading, error }] = useLazyQuery(GET_USER, {
+  const [getUser] = useLazyQuery(GET_USER, {
     onCompleted: (data) => setUser(data?.user[0].id),
   });
 
