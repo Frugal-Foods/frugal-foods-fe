@@ -1,5 +1,13 @@
 import { gql } from "@apollo/client";
 
+export const GET_USER = gql`
+  query getUser {
+    user {
+      id
+    }
+  }
+`;
+
 export const GET_ALL_STORES = gql`
   query GetStores($zipcode: String!) {
     stores(zipcode: $zipcode) {

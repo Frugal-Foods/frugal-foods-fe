@@ -1,14 +1,11 @@
 
 describe('Frugal Foods E2E', () => {
   beforeEach(() => {
-    cy.intercept('https://frugal-foods-be.fly.dev/graphql', {
-      fixture: 'userStores.json'
-    }).as('userStores')
     cy.visit('http://localhost:3000/')
   });
 
   it('should show user the home page', () => {
-    cy.contains('h3', 'Find Grocery Stores Near You')
+    cy.contains('h3', 'Find Grocery Stores Near You:')
   })
 
   it('should show header banner', () => {
@@ -19,23 +16,19 @@ describe('Frugal Foods E2E', () => {
     cy.get('.App').find("img").should('be.visible')
   })
 
-  it('should not show a different page', () => {
-    cy.get().should('not.exist', 'hello world')
-  })
-
-  it('Should have Find Stores button', () => {
+  it('should have Find Stores button', () => {
     cy.contains('.find-store-container > button', 'Find Stores')
   })
 
-  it('Should have a stores button', () => {
+  it('should have a stores button', () => {
     cy.contains('.stores', 'Stores')
   })
 
   it('should have a reset button', () => {
-    cy.get('.reset-btn').click()
+    cy.contains('.reset-btn', 'Reset All')
   })
 
-  it('Should contain a footer', () => {
+  it('should contain a footer', () => {
     cy.contains(':nth-child(1) > .student-name', 'Danielle Sweeny')
   })
 
@@ -43,18 +36,15 @@ describe('Frugal Foods E2E', () => {
     cy.get('.search').should('have.attr', 'href', '/search')
   })
 
-  it('should allow user to get a store', () => {
-    cy.intercept('https://frugal-foods-be.fly.dev/graphql', {
-      fixture: "stores.json"
-    }).as('stores')
-    cy.get('input').type('80206');
-    cy.get('.find-stores-btn').click()
-    cy.intercept('https://frugal-foods-be.fly.dev/graphql', {
-      fixture: "userStores.json"
-    }).as('userStores')
-    // cy.get(':nth-child(1) > .individual-store-card')
-    cy.get(':nth-child(1) > .individual-store-card > :nth-child(2)').contains("Test King Soopers - CAPITOL HILL")
-    // cy.get(':nth-child(2) > .individual-store-card > :nth-child(2)').contains("Test King Soopers - MAYFAIR")
+  it('should allow user to view store cards near them', () => {
+    cy.get("input").type("80206");
+    cy.intercept("https://frugal-foods-be.fly.dev/graphql", {
+      fixture: "stores.json",
+    }).as("stores");
+    cy.get(".find-stores-btn").click();
+    cy.get(".individual-store-card").contains(
+      "Test King Soopers - CAPITOL HILL"
+    );
   })
 })
 
@@ -72,7 +62,6 @@ describe('Search Page', () => {
     cy.get('.search-page > :nth-child(1) > button').click()
     cy.contains(':nth-child(1) > .store-item-card', 'Organic Banana')
     cy.contains(':nth-child(1) > .store-item-card', 'King Soopers')
-    cy.get(':nth-child(1) > .student-name').contains('Danielle Sweeny')
   })
 
   it('should allow user to add items to cart', () => {
@@ -96,18 +85,24 @@ describe('Cart Page', () => {
     cy.intercept('https://frugal-foods-be.fly.dev/graphql', {
       fixture: 'userStoreItems.json'
     }).as('userStoreItems')
-    cy.visit('http://localhost:3000/cart/')
+    cy.visit('http://localhost:3000/cart')
   });
 
-  it('should allow user to go to the cart page', () => {
-    cy.get('h3').contains('Total')
+  it('should allow user to view store total', () => {
+    cy.get('h3').contains('Total: $1.38')
   })
 
-  it('should allow user to go to the cart page', () => {
-    cy.get('h2').contains('King Soopers')
+  it('should show store name for each individual store cart', () => {
+    cy.contains("h2", "King Soopers - CAPITOL HILL")
   })
 
-  it('should have a item from user choice', () => {
+  it('should show store address for each individual store cart', () => {
+    cy.get(".cart-container > :nth-child(2)").contains(
+      "1155 E 9Th Ave, Denver, CO, 80218"
+    )
+  })
+
+  it('should have a cart item from user choice', () => {
     cy.get('.individual-cart-item').contains('h4', 'Organic Banana')
   })
 
@@ -115,11 +110,11 @@ describe('Cart Page', () => {
     cy.get('.search').should('have.attr', 'href', '/search')
   })
 
-  it('should have a item from user choice', () => {
-    cy.get('.individual-cart-item > p').contains('Item Total')
+  it('should have a item total from user choice', () => {
+    cy.get('.individual-cart-item > p').contains('Item Total: $1.38')
   })
 
-  it('should take user to all movies from details page on sites title click', () => {
+  it('should take user to cart page on cart image click', () => {
     cy.get('.header-openBasket > svg').click()
       .url().should('include', '/cart')
   })
