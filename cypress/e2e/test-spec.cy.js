@@ -25,7 +25,7 @@ describe('Frugal Foods E2E', () => {
   })
 
   it('should have a reset button', () => {
-    cy.get('.reset-btn').click()
+    cy.contains('.reset-btn', 'Reset All')
   })
 
   it('should contain a footer', () => {
@@ -38,10 +38,10 @@ describe('Frugal Foods E2E', () => {
 
   it('should allow user to view store cards near them', () => {
     cy.get("input").type("80206");
+    cy.intercept("https://frugal-foods-be.fly.dev/graphql", {
+      fixture: "stores.json",
+    }).as("stores");
     cy.get(".find-stores-btn").click();
-    cy.intercept('https://frugal-foods-be.fly.dev/graphql', {
-      fixture: "stores.json"
-    }).as('stores')
     cy.get(".individual-store-card").contains(
       "Test King Soopers - CAPITOL HILL"
     );
